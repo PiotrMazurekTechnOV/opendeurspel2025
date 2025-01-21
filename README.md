@@ -2,8 +2,6 @@
 
 ## Technov Quiz App 
 
- 
-
 ### De visie 
 
 Een applicatie waar gebruikers op een eenvoudige manier een quiz kunnen aanmaken en delen met andere gebruikers. 
@@ -16,6 +14,7 @@ De deelnemer gaat naar een lokaal om een vraag te beantwoorden. Met behulp van d
 Na de hele toer van de school te hebben gedaan, gaat de deelnemer naar de computer met een printer. De deelnemer voert zijn code in en drukt zijn diploma met zijn score af. 
 
 Origineel project in Python: PiotrMazurekTechnOV/Opendeurspel (github.com) 
+
 Versie 2 project 2024: https://github.com/PiotrMazurekTechnOV/Opendeurspel2024
 
 ### Team met initiële taken 
