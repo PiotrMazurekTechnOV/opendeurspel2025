@@ -1,6 +1,6 @@
-# Opendeurspel2024
+# Opendeurspel2025
 
-## Technov Quiz Webapp 
+## Technov Quiz App 
 
  
 
@@ -64,6 +64,8 @@ tijdslimiet per vragen (afhankelijk vanaf hoe snel een vraag wordt beantwoord is
 
 Authenticatie 
 
+Websocket realtime aanpassen van vragen
+
  
 
 ## Technisch 
@@ -125,7 +127,7 @@ Na een paar commits:
 
 ## Documentatie Database Import
 
-- Open Mysql
+- Open Mysql Workbench
 - Druk op Administration en klick op data import
-- Selecteer imoport van self-contained file
+- Selecteer import van self-contained file
 - Selecteer het bestand en export
