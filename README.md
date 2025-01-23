@@ -130,7 +130,3 @@ Na een paar commits:
 - Druk op Administration en klick op data import
 - Selecteer import van self-contained file
 - Selecteer het bestand en export
-
-## Database Desing
-
-![alt text](20250121_143429.jpg)
