@@ -170,6 +170,7 @@
             this.registratie_btn.TabIndex = 14;
             this.registratie_btn.Text = "Registreren";
             this.registratie_btn.UseVisualStyleBackColor = true;
+            this.registratie_btn.Click += new System.EventHandler(this.registratie_btn_Click);
             // 
             // gsm_pakker_als_er_mooie_mamas_zijn
             // 

@@ -1,0 +1,10 @@
+C:\Users\JonHysenaj\OneDrive - Katholiek Onderwijs Vilvoorde Machelen Diegem vzw\Bureaublad\Shared Files\Opendeur 2025\opendeurspel2025\Frontend\RegistratieProgram\bin\Debug\RegistratieProgram.exe.config
+C:\Users\JonHysenaj\OneDrive - Katholiek Onderwijs Vilvoorde Machelen Diegem vzw\Bureaublad\Shared Files\Opendeur 2025\opendeurspel2025\Frontend\RegistratieProgram\bin\Debug\RegistratieProgram.exe
+C:\Users\JonHysenaj\OneDrive - Katholiek Onderwijs Vilvoorde Machelen Diegem vzw\Bureaublad\Shared Files\Opendeur 2025\opendeurspel2025\Frontend\RegistratieProgram\bin\Debug\RegistratieProgram.pdb
+C:\Users\JonHysenaj\OneDrive - Katholiek Onderwijs Vilvoorde Machelen Diegem vzw\Bureaublad\Shared Files\Opendeur 2025\opendeurspel2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.csproj.AssemblyReference.cache
+C:\Users\JonHysenaj\OneDrive - Katholiek Onderwijs Vilvoorde Machelen Diegem vzw\Bureaublad\Shared Files\Opendeur 2025\opendeurspel2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.Form.resources
+C:\Users\JonHysenaj\OneDrive - Katholiek Onderwijs Vilvoorde Machelen Diegem vzw\Bureaublad\Shared Files\Opendeur 2025\opendeurspel2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.Properties.Resources.resources
+C:\Users\JonHysenaj\OneDrive - Katholiek Onderwijs Vilvoorde Machelen Diegem vzw\Bureaublad\Shared Files\Opendeur 2025\opendeurspel2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.csproj.GenerateResource.cache
+C:\Users\JonHysenaj\OneDrive - Katholiek Onderwijs Vilvoorde Machelen Diegem vzw\Bureaublad\Shared Files\Opendeur 2025\opendeurspel2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.csproj.CoreCompileInputs.cache
+C:\Users\JonHysenaj\OneDrive - Katholiek Onderwijs Vilvoorde Machelen Diegem vzw\Bureaublad\Shared Files\Opendeur 2025\opendeurspel2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.exe
+C:\Users\JonHysenaj\OneDrive - Katholiek Onderwijs Vilvoorde Machelen Diegem vzw\Bureaublad\Shared Files\Opendeur 2025\opendeurspel2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.pdb
