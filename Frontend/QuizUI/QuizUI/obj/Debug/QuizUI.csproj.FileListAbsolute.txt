@@ -8,3 +8,4 @@ C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI
 C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\obj\Debug\QuizUI.csproj.CoreCompileInputs.cache
 C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\obj\Debug\QuizUI.exe
 C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\obj\Debug\QuizUI.pdb
+C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\obj\Debug\QuizUI.CodeForm.resources
