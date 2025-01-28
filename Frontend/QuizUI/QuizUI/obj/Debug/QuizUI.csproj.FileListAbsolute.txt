@@ -9,3 +9,4 @@ C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI
 C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\obj\Debug\QuizUI.exe
 C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\obj\Debug\QuizUI.pdb
 C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\obj\Debug\QuizUI.CodeForm.resources
+C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\obj\Debug\QuizUI.lokaalchooser.resources

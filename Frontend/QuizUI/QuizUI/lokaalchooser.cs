@@ -25,6 +25,9 @@ namespace QuizUI
                 return;
             }
 
+            CodeForm codeform = new CodeForm();
+            codeform.Show();
+            this.Hide();
 
 
         }

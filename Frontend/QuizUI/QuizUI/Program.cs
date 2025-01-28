@@ -16,7 +16,7 @@ namespace QuizUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CodeForm());
+            Application.Run(new lokaalchooser());
         }
     }
 }
