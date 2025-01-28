@@ -27,7 +27,16 @@ namespace QuizUI
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
+           if(string.IsNullOrEmpty(LoginTxtBox.Text))
+            {
+                MessageBox.Show("error, vul in of foute code.");
 
+                return;
+            }
+
+           Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
 
         private void LoginTxtBox_TextChanged(object sender, EventArgs e)

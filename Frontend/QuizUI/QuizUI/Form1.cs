@@ -32,12 +32,12 @@ namespace QuizUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("Button 1 werkt.");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Button 2 werkt.");
         }
 
         private void button2_MouseHover(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace QuizUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Button 3 werkt.");
         }
 
         private void button3_MouseHover(object sender, EventArgs e)
@@ -57,10 +57,30 @@ namespace QuizUI
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Button 4 werkt.");
         }
 
         private void button4_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_MouseLeave(object sender, EventArgs e)
         {
 
         }
