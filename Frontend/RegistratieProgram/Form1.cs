@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RegistratieProgram
 {
@@ -27,13 +28,22 @@ namespace RegistratieProgram
 
         private void registratie_btn_Click(object sender, EventArgs e)
         {
-            if(Convert.ToString(voornaam_textbox) != null)
+            if (string.IsNullOrEmpty(voornaam_textbox.Text) || string.IsNullOrEmpty(achternaam_textbox.Text) || string.IsNullOrEmpty(leeftijd_textbox.Text))
             {
-                MessageBox.Show("lesgoo");
+
+                MessageBox.Show("Vul alle velden in");
+            }
+            else if (voornaam_textbox.Text.Any(ch => !char.IsLetterOrDigit(ch)) || achternaam_textbox.Text.Any(ch => !char.IsLetterOrDigit(ch))|| leeftijd_textbox.Text.Any(ch => !char.IsLetterOrDigit(ch)))
+            {
+                MessageBox.Show("Niet hacken aub", "danku");
+            }
+            else if(leeftijd_textbox.Text.Any(ch => char.IsLetter(ch)))
+            {
+                MessageBox.Show("Niet volluit schrijven, dit programma begrijpt getallen wel", "Leeftijd");
             }
             else
             {
-                MessageBox.Show("noooo");
+                MessageBox.Show("lesgoo", "you didit!!!");
             }
         }
     }

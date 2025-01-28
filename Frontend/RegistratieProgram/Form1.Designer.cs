@@ -164,7 +164,7 @@
             // 
             // registratie_btn
             // 
-            this.registratie_btn.Location = new System.Drawing.Point(474, 343);
+            this.registratie_btn.Location = new System.Drawing.Point(320, 333);
             this.registratie_btn.Name = "registratie_btn";
             this.registratie_btn.Size = new System.Drawing.Size(92, 40);
             this.registratie_btn.TabIndex = 14;
@@ -175,7 +175,7 @@
             // gsm_pakker_als_er_mooie_mamas_zijn
             // 
             this.gsm_pakker_als_er_mooie_mamas_zijn.AutoSize = true;
-            this.gsm_pakker_als_er_mooie_mamas_zijn.Location = new System.Drawing.Point(212, 372);
+            this.gsm_pakker_als_er_mooie_mamas_zijn.Location = new System.Drawing.Point(320, 307);
             this.gsm_pakker_als_er_mooie_mamas_zijn.Name = "gsm_pakker_als_er_mooie_mamas_zijn";
             this.gsm_pakker_als_er_mooie_mamas_zijn.Size = new System.Drawing.Size(254, 20);
             this.gsm_pakker_als_er_mooie_mamas_zijn.TabIndex = 15;
