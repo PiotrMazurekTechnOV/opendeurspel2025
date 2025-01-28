@@ -56,6 +56,8 @@
             this.Number_txtbox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Question_txtbox = new System.Windows.Forms.TextBox();
+            this.LastName_txtbox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox_Lokalen
@@ -140,6 +142,7 @@
             this.checkBox1.TabIndex = 11;
             this.checkBox1.Text = "Option 1";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -150,6 +153,7 @@
             this.checkBox2.TabIndex = 12;
             this.checkBox2.Text = "Option 2";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -160,6 +164,7 @@
             this.checkBox3.TabIndex = 13;
             this.checkBox3.Text = "Option 3";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox4
             // 
@@ -170,6 +175,7 @@
             this.checkBox4.TabIndex = 14;
             this.checkBox4.Text = "Option 4";
             this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label4
             // 
@@ -204,7 +210,6 @@
             this.UUC_txtbox.Name = "UUC_txtbox";
             this.UUC_txtbox.Size = new System.Drawing.Size(177, 26);
             this.UUC_txtbox.TabIndex = 19;
-            this.UUC_txtbox.Text = ":";
             // 
             // label6
             // 
@@ -221,7 +226,6 @@
             this.Name_txtbox.Name = "Name_txtbox";
             this.Name_txtbox.Size = new System.Drawing.Size(177, 26);
             this.Name_txtbox.TabIndex = 21;
-            this.Name_txtbox.Text = ":";
             // 
             // label7
             // 
@@ -234,16 +238,15 @@
             // 
             // Age_txtbox
             // 
-            this.Age_txtbox.Location = new System.Drawing.Point(911, 137);
+            this.Age_txtbox.Location = new System.Drawing.Point(911, 192);
             this.Age_txtbox.Name = "Age_txtbox";
             this.Age_txtbox.Size = new System.Drawing.Size(177, 26);
             this.Age_txtbox.TabIndex = 23;
-            this.Age_txtbox.Text = ":";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(907, 114);
+            this.label8.Location = new System.Drawing.Point(907, 169);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 20);
             this.label8.TabIndex = 22;
@@ -251,7 +254,7 @@
             // 
             // Confirmbtn2
             // 
-            this.Confirmbtn2.Location = new System.Drawing.Point(911, 288);
+            this.Confirmbtn2.Location = new System.Drawing.Point(911, 346);
             this.Confirmbtn2.Name = "Confirmbtn2";
             this.Confirmbtn2.Size = new System.Drawing.Size(75, 53);
             this.Confirmbtn2.TabIndex = 24;
@@ -260,16 +263,15 @@
             // 
             // Email_txtbox
             // 
-            this.Email_txtbox.Location = new System.Drawing.Point(911, 189);
+            this.Email_txtbox.Location = new System.Drawing.Point(911, 244);
             this.Email_txtbox.Name = "Email_txtbox";
             this.Email_txtbox.Size = new System.Drawing.Size(177, 26);
             this.Email_txtbox.TabIndex = 26;
-            this.Email_txtbox.Text = ":";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(907, 166);
+            this.label9.Location = new System.Drawing.Point(907, 221);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 20);
             this.label9.TabIndex = 25;
@@ -277,16 +279,15 @@
             // 
             // Number_txtbox
             // 
-            this.Number_txtbox.Location = new System.Drawing.Point(911, 241);
+            this.Number_txtbox.Location = new System.Drawing.Point(911, 300);
             this.Number_txtbox.Name = "Number_txtbox";
             this.Number_txtbox.Size = new System.Drawing.Size(177, 26);
             this.Number_txtbox.TabIndex = 28;
-            this.Number_txtbox.Text = ":";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(907, 218);
+            this.label10.Location = new System.Drawing.Point(907, 273);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(113, 20);
             this.label10.TabIndex = 27;
@@ -300,11 +301,29 @@
             this.Question_txtbox.TabIndex = 29;
             this.Question_txtbox.TextChanged += new System.EventHandler(this.Question_txtbox_TextChanged);
             // 
+            // LastName_txtbox
+            // 
+            this.LastName_txtbox.Location = new System.Drawing.Point(911, 138);
+            this.LastName_txtbox.Name = "LastName_txtbox";
+            this.LastName_txtbox.Size = new System.Drawing.Size(177, 26);
+            this.LastName_txtbox.TabIndex = 31;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(907, 115);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 20);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Last Name";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
+            this.Controls.Add(this.LastName_txtbox);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.Question_txtbox);
             this.Controls.Add(this.Number_txtbox);
             this.Controls.Add(this.label10);
@@ -371,6 +390,8 @@
         private System.Windows.Forms.TextBox Number_txtbox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox Question_txtbox;
+        private System.Windows.Forms.TextBox LastName_txtbox;
+        private System.Windows.Forms.Label label11;
     }
 }
 
