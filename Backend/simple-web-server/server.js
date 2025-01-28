@@ -4,7 +4,12 @@ const mysql = require("mysql2/promise");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 require('dotenv').config()
+var corsOptions = {
+  origin: "http://localhost:8081"
+};
 
+app.use(cors(corsOptions));
+app.use(express.json());
 
 // Middleware
 app.use(cors());
@@ -24,9 +29,8 @@ async function connect() {
         throw err;
     }
 }
-
-//update user 
-app.post("/users/update", async (req, res) => {
+//UPDATES
+app.post("/user/update", async (req, res) => {
   try {
       const { name, age, email, gsm_number, code, consent } = req.body;
 
@@ -38,7 +42,7 @@ app.post("/users/update", async (req, res) => {
       const query = `
          
       `;
-      await con.execute(query, [username, score, gameDate]);
+      await con.execute(query, [name, age, email, gsm_number, code, consent, code]);
 
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
@@ -47,7 +51,7 @@ app.post("/users/update", async (req, res) => {
   }
 });
 
-app.post("/locations/update", async (req, res)=>{
+app.post("/location/update", async (req, res)=>{
   try {
     const { number, name} = req.body;
     if(!number || !name) {
@@ -63,10 +67,16 @@ app.post("/locations/update", async (req, res)=>{
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
     res.json(err)
-  }
-  }
-)
+  }}
+);
 
+app.get("/test", async (req, res)=>{
+  res.send("dit is een test")
+})
 
-
+// Start the server
+const PORT = process.env.PORT || 8081;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
 
