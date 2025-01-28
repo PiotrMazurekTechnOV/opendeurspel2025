@@ -1,0 +1,120 @@
+-- 1. Table: answers
+-- CRUD Operations for each column:
+-- id
+INSERT INTO answers (id) VALUES (1);
+SELECT id FROM answers WHERE id = 1;
+UPDATE answers SET id = 2 WHERE id = 1;
+DELETE FROM answers WHERE id = 2;
+
+-- answer_text
+INSERT INTO answers (answer_text) VALUES ('Sample Answer');
+SELECT answer_text FROM answers WHERE answer_text = 'Sample Answer';
+UPDATE answers SET answer_text = 'Updated Answer' WHERE answer_text = 'Sample Answer';
+DELETE FROM answers WHERE answer_text = 'Updated Answer';
+
+-- question_id
+INSERT INTO answers (question_id) VALUES (1);
+SELECT question_id FROM answers WHERE question_id = 1;
+UPDATE answers SET question_id = 2 WHERE question_id = 1;
+DELETE FROM answers WHERE question_id = 2;
+
+-- user_id
+INSERT INTO answers (user_id) VALUES (1);
+SELECT user_id FROM answers WHERE user_id = 1;
+UPDATE answers SET user_id = 2 WHERE user_id = 1;
+DELETE FROM answers WHERE user_id = 2;
+
+-- 2. Table: locations
+
+-- CRUD Operations for each column:
+-- id
+INSERT INTO locations (id) VALUES (1);
+SELECT id FROM locations WHERE id = 1;
+UPDATE locations SET id = 2 WHERE id = 1;
+DELETE FROM locations WHERE id = 2;
+
+-- location_name
+INSERT INTO locations (location_name) VALUES ('Main Hall');
+SELECT location_name FROM locations WHERE location_name = 'Main Hall';
+UPDATE locations SET location_name = 'Updated Hall' WHERE location_name = 'Main Hall';
+DELETE FROM locations WHERE location_name = 'Updated Hall';
+
+-- address
+INSERT INTO locations (address) VALUES ('123 Example Street');
+SELECT address FROM locations WHERE address = '123 Example Street';
+UPDATE locations SET address = '456 New Street' WHERE address = '123 Example Street';
+DELETE FROM locations WHERE address = '456 New Street';
+
+-- 3. Table: questions
+-- CRUD Operations for each column:
+-- id
+INSERT INTO questions (id) VALUES (1);
+SELECT id FROM questions WHERE id = 1;
+UPDATE questions SET id = 2 WHERE id = 1;
+DELETE FROM questions WHERE id = 2;
+
+-- question_text
+INSERT INTO questions (question_text) VALUES ('What is CRUD?');
+SELECT question_text FROM questions WHERE question_text = 'What is CRUD?';
+UPDATE questions SET question_text = 'What does CRUD stand for?' WHERE question_text = 'What is CRUD?';
+DELETE FROM questions WHERE question_text = 'What does CRUD stand for?';
+
+-- category_id
+INSERT INTO questions (category_id) VALUES (1);
+SELECT category_id FROM questions WHERE category_id = 1;
+UPDATE questions SET category_id = 2 WHERE category_id = 1;
+DELETE FROM questions WHERE category_id = 2;
+
+-- 4. Table: scores
+-- CRUD Operations for each column:
+-- id
+INSERT INTO scores (id) VALUES (1);
+SELECT id FROM scores WHERE id = 1;
+UPDATE scores SET id = 2 WHERE id = 1;
+DELETE FROM scores WHERE id = 2;
+
+-- user_id
+INSERT INTO scores (user_id) VALUES (1);
+SELECT user_id FROM scores WHERE user_id = 1;
+UPDATE scores SET user_id = 2 WHERE user_id = 1;
+DELETE FROM scores WHERE user_id = 2;
+
+-- score
+INSERT INTO scores (score) VALUES (100);
+SELECT score FROM scores WHERE score = 100;
+UPDATE scores SET score = 200 WHERE score = 100;
+DELETE FROM scores WHERE score = 200;
+
+-- date
+INSERT INTO scores (date) VALUES ('2025-01-28');
+SELECT date FROM scores WHERE date = '2025-01-28';
+UPDATE scores SET date = '2025-02-01' WHERE date = '2025-01-28';
+DELETE FROM scores WHERE date = '2025-02-01';
+
+-- 5. Table: users
+-- CRUD Operations for each column:
+-- id
+INSERT INTO users (id) VALUES (1);
+SELECT id FROM users WHERE id = 1;
+UPDATE users SET id = 2 WHERE id = 1;
+DELETE FROM users WHERE id = 2;
+
+-- username
+INSERT INTO users (username) VALUES ('test_user');
+SELECT username FROM users WHERE username = 'test_user';
+UPDATE users SET username = 'updated_user' WHERE username = 'test_user';
+DELETE FROM users WHERE username = 'updated_user';
+
+-- email
+INSERT INTO users (email) VALUES ('user@example.com');
+SELECT email FROM users WHERE email = 'user@example.com';
+UPDATE users SET email = 'updated@example.com' WHERE email = 'user@example.com';
+DELETE FROM users WHERE email = 'updated@example.com';
+
+-- age
+INSERT INTO users (age) VALUES ('13');
+SELECT age FROM users WHERE age = '13';
+UPDATE users SET age = '12' WHERE age = '13';
+DELETE FROM users WHERE age = '12';
+
+-- gsm_number
