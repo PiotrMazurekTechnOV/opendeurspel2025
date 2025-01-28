@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const mysql = require("mysql2/promise");
 const bodyParser = require("body-parser");
-const cors = require("cors");
 require('dotenv').config()
 var corsOptions = {
   origin: "http://localhost:8081"
@@ -12,7 +11,6 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // Middleware
-app.use(cors());
 app.use(bodyParser.json());
 
 // Database connection 
@@ -40,7 +38,7 @@ app.post("/user/update", async (req, res) => {
 
       const con = await connect(); 
       const query = `
-         
+      
       `;
       await con.execute(query, [name, age, email, gsm_number, code, consent, code]);
 
@@ -70,9 +68,24 @@ app.post("/location/update", async (req, res)=>{
   }}
 );
 
-app.get("/test", async (req, res)=>{
-  res.send("dit is een test")
-})
+app.get("/question/update", async (req, res)=>{
+  try {
+    const { location_id, text} = req.body;
+    if(!location_id || !text) {
+      return res.status(400).json({error: "All fields are required."});
+    }
+    const con = await connect(); 
+      const query = `
+         
+      `;
+      await con.execute(query, [location_id, text]);
+
+      await con.end(); 
+      res.status(200).json({ message: "Data updated!" });
+  } catch (error) {
+    res.json(err)
+  }}
+);
 
 // Start the server
 const PORT = process.env.PORT || 8081;
