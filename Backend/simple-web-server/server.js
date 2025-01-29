@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mysql = require("mysql2/promise");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 require('dotenv').config()
 var corsOptions = {
   origin: "http://localhost:8081"
