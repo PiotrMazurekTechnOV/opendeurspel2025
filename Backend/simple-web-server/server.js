@@ -58,9 +58,8 @@ app.post("/user/update", async (req, res) => {
       }
 
       const con = await connect(); 
-      const query = `
-      
-      `;
+      const query = `UPDATE users SET name = ?, age = ?, 
+      email = ?, gsm_number = ?, consent = ? WHERE code = ?`;
       await con.execute(query, [name, age, email, gsm_number, code, consent, code]);
 
       await con.end(); 
@@ -77,9 +76,7 @@ app.post("/location/update", async (req, res)=>{
       return res.status(400).json({error: "All fields are required."});
     }
     const con = await connect(); 
-      const query = `
-         
-      `;
+      const query = `UPDATE locations SET name = ? WHERE number = ?`;
       await con.execute(query, [number, name]);
 
       await con.end(); 
@@ -96,9 +93,7 @@ app.get("/question/update", async (req, res)=>{
       return res.status(400).json({error: "All fields are required."});
     }
     const con = await connect(); 
-      const query = `
-         
-      `;
+      const query = `UPDATE questions SET text = ? WHERE location_id = ?`;
       await con.execute(query, [location_id, text]);
 
       await con.end(); 
