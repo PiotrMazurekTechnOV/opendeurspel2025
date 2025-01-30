@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const mysql = require("mysql2/promise");
 const bodyParser = require("body-parser");
-const cors = require("cors");
 require('dotenv').config()
 var corsOptions = {
   origin: "http://localhost:8081"
@@ -28,6 +27,27 @@ async function connect() {
         throw err;
     }
 }
+//CREATE
+app.post("/user/create", async (req, res) => {
+  try {
+      const { name, age, email, gsm_number, code, consent } = req.body;
+
+      if (!name || !age || !gsm_number ||!consent) {
+          return res.status(400).json({ error: "All fields are required." });
+      }
+
+      const con = await connect(); 
+      const query = `INSERT INTO users (name, age, email, gsm_number, code, consent) VALUES 
+      (?, ?, ?, ?, ?, ?)`;
+      await con.execute(query, [name, age, email, gsm_number, code, consent]);
+
+      await con.end(); 
+      res.status(20).json({ message: "User created successfully!" });
+  } catch (error) {
+    res.json(err);
+  }
+});
+
 //UPDATES
 app.post("/user/update", async (req, res) => {
   try {
@@ -46,7 +66,7 @@ app.post("/user/update", async (req, res) => {
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
-    res.json(err)
+    res.json(err);
   }
 });
 
@@ -65,7 +85,7 @@ app.post("/location/update", async (req, res)=>{
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
-    res.json(err)
+    res.json(err);
   }}
 );
 
@@ -84,7 +104,7 @@ app.get("/question/update", async (req, res)=>{
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
-    res.json(err)
+    res.json(err);
   }}
 );
 
