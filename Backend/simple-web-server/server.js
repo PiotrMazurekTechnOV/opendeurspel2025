@@ -3,11 +3,8 @@ const app = express();
 const mysql = require("mysql2/promise");
 const bodyParser = require("body-parser");
 require('dotenv').config()
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
 
-app.use(cors(corsOptions));
+
 app.use(express.json());
 
 // Middleware
@@ -102,9 +99,11 @@ app.get("/question/update", async (req, res)=>{
     res.json(err);
   }}
 );
-
+// DELETE 
+app.delete("/questions/:id", async (req, res) => {
+})
 // Start the server
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
