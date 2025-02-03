@@ -101,10 +101,34 @@ app.get("/question/update", async (req, res)=>{
 );
 // DELETE 
 app.delete("/questions/:id", async (req, res) => {
-})
-// Start the server
+  try {
+    const { id } = req.params; // Get the question ID from the URL
+
+    if (!id) {
+      return res.status(400).json({ error: "Please provide a question ID." });
+    }
+
+    const con = await connect(); // Connect to the database
+    const query = "DELETE FROM questions WHERE id = ?"; 
+    const [result] = await con.execute(query, [id]); // Run the delete query
+
+    await con.end(); // Close the database connection
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Question not found." });
+    }
+
+    res.json({ message: "Question deleted successfully!" });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+// Start server
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
+});
+app.get("/", (req, res) => {
+  res.send("WELKOM!!!");
 });
 
