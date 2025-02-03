@@ -4,10 +4,8 @@ const mysql = require("mysql2/promise");
 const bodyParser = require("body-parser");
 require('dotenv').config()
 
-
-app.use(express.json());
-
 // Middleware
+app.use(express.json());
 app.use(bodyParser.json());
 
 // Database connection 
@@ -39,7 +37,7 @@ app.post("/user/create", async (req, res) => {
       await con.execute(query, [name, age, email, gsm_number, code, consent]);
 
       await con.end(); 
-      res.status(20).json({ message: "User created successfully!" });
+      res.status(201).json({ message: "User created successfully!" });
   } catch (error) {
     res.json(err);
   }
@@ -74,7 +72,7 @@ app.post("/location/update", async (req, res)=>{
     }
     const con = await connect(); 
       const query = `UPDATE locations SET name = ? WHERE number = ?`;
-      await con.execute(query, [number, name]);
+      await con.execute(query, [name, number]);
 
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
@@ -83,7 +81,7 @@ app.post("/location/update", async (req, res)=>{
   }}
 );
 
-app.get("/question/update", async (req, res)=>{
+app.post("/question/update", async (req, res)=>{
   try {
     const { location_id, text} = req.body;
     if(!location_id || !text) {
