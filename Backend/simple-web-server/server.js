@@ -98,7 +98,7 @@ app.post("/question/update", async (req, res)=>{
   }}
 );
 // DELETE 
-app.delete("/questions/:id", async (req, res) => {
+app.delete("/question/:id", async (req, res) => {
   try {
     const { id } = req.params; // Get the question ID from the URL
 
@@ -106,12 +106,12 @@ app.delete("/questions/:id", async (req, res) => {
       return res.status(400).json({ error: "Please provide a question ID." });
     }
 
-    const con = await connect(); // Connect to the database
+    const con = await connect(); 
     const query = "DELETE FROM questions WHERE id = ?"; 
-    const [result] = await con.execute(query, [id]); // Run the delete query
+    const [result] = await con.execute(query, [id]); // Run delete query
 
-    await con.end(); // Close the database connection
-
+    await con.end(); 
+    
     if (result.affectedRows === 0) {
       return res.status(404).json({ error: "Question not found." });
     }
