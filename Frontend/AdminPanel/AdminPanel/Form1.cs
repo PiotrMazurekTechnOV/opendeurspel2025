@@ -196,7 +196,7 @@ namespace AdminPanel
                     if (control is CheckBox checkBox)
                     {
                         // Zoek de gekoppelde TextBox (zelfde nummer als checkbox)
-                        string textBoxName = "textBox" + checkBox.Name[^1]; // Haalt laatste teken van de naam
+                        string textBoxName = "textBox" + checkBox.Name[1]; // Haalt laatste teken van de naam
                         TextBox linkedTextBox = this.Controls.Find(textBoxName, true).FirstOrDefault() as TextBox;
 
                         // Zet de geselecteerde TextBox op "True" en de rest op "False"

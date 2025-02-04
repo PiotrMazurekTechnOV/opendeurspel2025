@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\quizgame2025\\opendeurspel2025\\Frontend\\AdminPanel\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BADF156B-00D6-4D79-B03E-4EDA6E70DC39}|AdminPanel\\AdminPanel.csproj|C:\\quizgame2025\\opendeurspel2025\\Frontend\\AdminPanel\\adminpanel\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BADF156B-00D6-4D79-B03E-4EDA6E70DC39}|AdminPanel\\AdminPanel.csproj|c:\\quizgame2025\\opendeurspel2025\\frontend\\adminpanel\\adminpanel\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BADF156B-00D6-4D79-B03E-4EDA6E70DC39}|AdminPanel\\AdminPanel.csproj|solutionrelative:adminpanel\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BADF156B-00D6-4D79-B03E-4EDA6E70DC39}|AdminPanel\\AdminPanel.csproj|c:\\quizgame2025\\opendeurspel2025\\frontend\\adminpanel\\adminpanel\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{BADF156B-00D6-4D79-B03E-4EDA6E70DC39}|AdminPanel\\AdminPanel.csproj|C:\\quizgame2025\\opendeurspel2025\\Frontend\\AdminPanel\\adminpanel\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BADF156B-00D6-4D79-B03E-4EDA6E70DC39}|AdminPanel\\AdminPanel.csproj|solutionrelative:adminpanel\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "AdminPanel\\Form1.cs",
               "ToolTip": "C:\\quizgame2025\\opendeurspel2025\\Frontend\\AdminPanel\\AdminPanel\\Form1.cs*",
               "RelativeToolTip": "AdminPanel\\Form1.cs*",
-              "ViewState": "AgIAABkAAAAAAAAAAAAUwC4AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAAAMYAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-21T12:11:49.938Z",
               "EditorCaption": ""
