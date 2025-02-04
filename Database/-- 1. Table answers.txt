@@ -1,4 +1,4 @@
--- 1. Table: answers
+-- 1. Table: answers (old)
 -- CRUD Operations for each column:
 -- id
 INSERT INTO answers (id) VALUES (1);
