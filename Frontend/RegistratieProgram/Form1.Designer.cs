@@ -103,11 +103,15 @@
             // Registratie_text
             // 
             this.Registratie_text.AutoSize = true;
-            this.Registratie_text.Location = new System.Drawing.Point(317, 9);
+            this.Registratie_text.BackColor = System.Drawing.Color.Transparent;
+            this.Registratie_text.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Registratie_text.Image = global::RegistratieProgram.Properties.Resources.Button_background_titel1;
+            this.Registratie_text.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Registratie_text.Location = new System.Drawing.Point(495, 91);
             this.Registratie_text.Name = "Registratie_text";
-            this.Registratie_text.Size = new System.Drawing.Size(433, 16);
+            this.Registratie_text.Size = new System.Drawing.Size(1106, 124);
             this.Registratie_text.TabIndex = 7;
-            this.Registratie_text.Text = "Om te kunnen deelnemen aan onze TechoV-Quiz mout u zich registreren";
+            this.Registratie_text.Text = "Om te kunnen deelnemen aan onze TechoV-Quiz,\r\nmoet u zich registreren:\r\n";
             // 
             // voornaam_label
             // 
@@ -187,6 +191,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::RegistratieProgram.Properties.Resources.registratietechnov;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.gsm_pakker_als_er_mooie_mamas_zijn);
             this.Controls.Add(this.registratie_btn);
@@ -204,6 +211,7 @@
             this.Controls.Add(this.leeftijd_textbox);
             this.Controls.Add(this.voornaam_textbox);
             this.Controls.Add(this.Titel);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Form";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form_Load);
