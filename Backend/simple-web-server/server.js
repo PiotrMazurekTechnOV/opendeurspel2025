@@ -46,16 +46,16 @@ app.post("/user/create", async (req, res) => {
 //questions
 app.post("/question/create", async (req, res) => {
   try {
-      const { id, location_id, text } = req.body;
+      const { location_id, text } = req.body;
 
-      if (!id || !location_id || !text) {
+      if (!location_id || !text) {
           return res.status(400).json({ error: "All fields are required." });
       }
 
       const con = await connect(); 
-      const query = `INSERT INTO users (id, location_id, text) VALUES 
-      (?, ?, ?)`;
-      await con.execute(query, [name, age, email, gsm_number, code, consent]);
+      const query = `INSERT INTO users (location_id, text) VALUES 
+      (?, ?)`;
+      await con.execute(query, [location_id, text]);
 
       await con.end(); 
       res.status(201).json({ message: "Question created successfully!" });
@@ -66,16 +66,16 @@ app.post("/question/create", async (req, res) => {
 //answers
 app.post("/answers/create", async (req, res) => {
   try {
-      const { id, text, correct, question_id } = req.body;
+      const { text, correct, question_id } = req.body;
 
-      if (!id || !text || !correct ||!question_id) {
+      if (!text || !correct ||!question_id) {
           return res.status(400).json({ error: "All fields are required." });
       }
 
       const con = await connect(); 
-      const query = `INSERT INTO users (id, text, correct, question_id) VALUES 
-      (?, ?, ?, ?)`;
-      await con.execute(query, [name, age, email, gsm_number, code, consent]);
+      const query = `INSERT INTO users (text, correct, question_id) VALUES 
+      (?, ?, ?)`;
+      await con.execute(query, [text, correct, question_id]);
 
       await con.end(); 
       res.status(201).json({ message: "Answer created successfully!" });
@@ -86,16 +86,16 @@ app.post("/answers/create", async (req, res) => {
 //locations
 app.post("/locations/create", async (req, res) => {
   try {
-      const { id, number, name } = req.body;
+      const { number, name } = req.body;
 
-      if (!id || !number || !name) {
+      if (!number || !name) {
           return res.status(400).json({ error: "All fields are required." });
       }
 
       const con = await connect(); 
-      const query = `INSERT INTO users (id, number, name) VALUES 
-      (?, ?, ?)`;
-      await con.execute(query, [name, age, email, gsm_number, code, consent]);
+      const query = `INSERT INTO users (number, name) VALUES 
+      (?, ?)`;
+      await con.execute(query, [number, name]);
 
       await con.end(); 
       res.status(201).json({ message: "Location created successfully!" });
@@ -106,17 +106,17 @@ app.post("/locations/create", async (req, res) => {
 //scores
 app.post("/scores/create", async (req, res) => {
   try {
-      const { id, user_id, question_id, correct } = req.body;
+      const { user_id, question_id, correct } = req.body;
 
-      if (!id || !user_id || !question_id ||!correct) {
+      if (!user_id || !question_id ||!correct) {
           return res.status(400).json({ error: "All fields are required." });
       }
 
       const con = await connect(); 
-      const query = `INSERT INTO users (id, user_id, question_id, correct) VALUES 
-      (?, ?, ?, ?)`;
-      await con.execute(query, [name, age, email, gsm_number, code, consent]);
-
+      const query = `INSERT INTO users (user_id, question_id, correct) VALUES 
+      (?, ?, ?)`;
+      await con.execute(query, [user_id, question_id, correct]);
+      
       await con.end(); 
       res.status(201).json({ message: "Scores created successfully!" });
   } catch (error) {
