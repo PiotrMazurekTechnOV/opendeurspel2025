@@ -116,7 +116,7 @@ app.post("/scores/create", async (req, res) => {
       const query = `INSERT INTO users (user_id, question_id, correct) VALUES 
       (?, ?, ?)`;
       await con.execute(query, [user_id, question_id, correct]);
-      
+
       await con.end(); 
       res.status(201).json({ message: "Scores created successfully!" });
   } catch (error) {
@@ -203,6 +203,8 @@ app.delete("/question/:id", async (req, res) => {
   }
 });
 
+//READ
+//Read question
 app.get("/question/read/:id", async (req, res, next) => {
   try {
     const { id } = req.params; // Get the question ID from the URL
@@ -224,6 +226,118 @@ app.get("/question/read/:id", async (req, res, next) => {
     }
 
     res.json({ message: "Question read successfully!", data: rows });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+//Read users
+app.get("/users/read/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params; 
+
+    if (!id) {
+      return res.status(400).json({ error: "Please provide a user ID." });
+    }
+
+    const con = await connect(); 
+    const query = "SELECT * FROM users WHERE id = ?";
+    
+    // Execute query properly
+    const [rows] = await con.execute(query, [id]);
+    console.log(rows)
+    con.end(); // Close connection after the query
+
+    if (rows.length === 0) { // Checking if the result set is empty
+      return res.status(404).json({ error: "User not found." });
+    }
+
+    res.json({ message: "User read successfully!", data: rows });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+//Read answers
+app.get("/answers/read/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params; 
+
+    if (!id) {
+      return res.status(400).json({ error: "Please provide an answer ID." });
+    }
+
+    const con = await connect(); 
+    const query = "SELECT * FROM answers WHERE id = ?";
+    
+    // Execute query properly
+    const [rows] = await con.execute(query, [id]);
+    console.log(rows)
+    con.end(); // Close connection after the query
+
+    if (rows.length === 0) { // Checking if the result set is empty
+      return res.status(404).json({ error: "Answer not found." });
+    }
+
+    res.json({ message: "Answer read successfully!", data: rows });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+//Read Locations
+app.get("/locations/read/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params; 
+
+    if (!id) {
+      return res.status(400).json({ error: "Please provide a location ID." });
+    }
+
+    const con = await connect(); 
+    const query = "SELECT * FROM locations WHERE id = ?";
+    
+    // Execute query properly
+    const [rows] = await con.execute(query, [id]);
+    console.log(rows)
+    con.end(); // Close connection after the query
+
+    if (rows.length === 0) { // Checking if the result set is empty
+      return res.status(404).json({ error: "Location not found." });
+    }
+
+    res.json({ message: "Location read successfully!", data: rows });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+//Read scores
+app.get("/scores/read/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params; 
+
+    if (!id) {
+      return res.status(400).json({ error: "Please provide a score ID." });
+    }
+
+    const con = await connect(); 
+    const query = "SELECT * FROM scores WHERE id = ?";
+    
+    // Execute query properly
+    const [rows] = await con.execute(query, [id]);
+    console.log(rows)
+    con.end(); // Close connection after the query
+
+    if (rows.length === 0) { // Checking if the result set is empty
+      return res.status(404).json({ error: " not found." });
+    }
+
+    res.json({ message: "User read successfully!", data: rows });
 
   } catch (error) {
     console.error(error);
