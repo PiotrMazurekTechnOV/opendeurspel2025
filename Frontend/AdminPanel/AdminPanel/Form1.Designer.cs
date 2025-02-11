@@ -35,7 +35,7 @@
             this.Antwd3_txtbox = new System.Windows.Forms.TextBox();
             this.Antwd2_txtbox = new System.Windows.Forms.TextBox();
             this.Antwd1_txtbox = new System.Windows.Forms.TextBox();
-            this.Confirmbtn1 = new System.Windows.Forms.Button();
+            this.ConfirmbtnCR = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -50,14 +50,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.Age_txtbox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.Confirmbtn2 = new System.Windows.Forms.Button();
+            this.ConfirmbtnPLR = new System.Windows.Forms.Button();
             this.Email_txtbox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.Number_txtbox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Question_txtbox = new System.Windows.Forms.TextBox();
-            this.LastName_txtbox = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox_Lokalen
@@ -115,14 +113,15 @@
             this.Antwd1_txtbox.Size = new System.Drawing.Size(177, 26);
             this.Antwd1_txtbox.TabIndex = 8;
             // 
-            // Confirmbtn1
+            // ConfirmbtnCR
             // 
-            this.Confirmbtn1.Location = new System.Drawing.Point(235, 288);
-            this.Confirmbtn1.Name = "Confirmbtn1";
-            this.Confirmbtn1.Size = new System.Drawing.Size(75, 53);
-            this.Confirmbtn1.TabIndex = 9;
-            this.Confirmbtn1.Text = "Confirm";
-            this.Confirmbtn1.UseVisualStyleBackColor = true;
+            this.ConfirmbtnCR.Location = new System.Drawing.Point(235, 288);
+            this.ConfirmbtnCR.Name = "ConfirmbtnCR";
+            this.ConfirmbtnCR.Size = new System.Drawing.Size(75, 53);
+            this.ConfirmbtnCR.TabIndex = 9;
+            this.ConfirmbtnCR.Text = "Confirm";
+            this.ConfirmbtnCR.UseVisualStyleBackColor = true;
+            this.ConfirmbtnCR.Click += new System.EventHandler(this.ConfirmbtnCR_Click);
             // 
             // label3
             // 
@@ -238,7 +237,7 @@
             // 
             // Age_txtbox
             // 
-            this.Age_txtbox.Location = new System.Drawing.Point(911, 192);
+            this.Age_txtbox.Location = new System.Drawing.Point(911, 145);
             this.Age_txtbox.Name = "Age_txtbox";
             this.Age_txtbox.Size = new System.Drawing.Size(177, 26);
             this.Age_txtbox.TabIndex = 23;
@@ -246,24 +245,25 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(907, 169);
+            this.label8.Location = new System.Drawing.Point(907, 122);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 20);
             this.label8.TabIndex = 22;
             this.label8.Text = "Age";
             // 
-            // Confirmbtn2
+            // ConfirmbtnPLR
             // 
-            this.Confirmbtn2.Location = new System.Drawing.Point(911, 346);
-            this.Confirmbtn2.Name = "Confirmbtn2";
-            this.Confirmbtn2.Size = new System.Drawing.Size(75, 53);
-            this.Confirmbtn2.TabIndex = 24;
-            this.Confirmbtn2.Text = "Confirm";
-            this.Confirmbtn2.UseVisualStyleBackColor = true;
+            this.ConfirmbtnPLR.Location = new System.Drawing.Point(911, 299);
+            this.ConfirmbtnPLR.Name = "ConfirmbtnPLR";
+            this.ConfirmbtnPLR.Size = new System.Drawing.Size(75, 53);
+            this.ConfirmbtnPLR.TabIndex = 24;
+            this.ConfirmbtnPLR.Text = "Confirm";
+            this.ConfirmbtnPLR.UseVisualStyleBackColor = true;
+            this.ConfirmbtnPLR.Click += new System.EventHandler(this.ConfirmbtnPLR_Click);
             // 
             // Email_txtbox
             // 
-            this.Email_txtbox.Location = new System.Drawing.Point(911, 244);
+            this.Email_txtbox.Location = new System.Drawing.Point(911, 197);
             this.Email_txtbox.Name = "Email_txtbox";
             this.Email_txtbox.Size = new System.Drawing.Size(177, 26);
             this.Email_txtbox.TabIndex = 26;
@@ -271,7 +271,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(907, 221);
+            this.label9.Location = new System.Drawing.Point(907, 174);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 20);
             this.label9.TabIndex = 25;
@@ -279,7 +279,7 @@
             // 
             // Number_txtbox
             // 
-            this.Number_txtbox.Location = new System.Drawing.Point(911, 300);
+            this.Number_txtbox.Location = new System.Drawing.Point(911, 253);
             this.Number_txtbox.Name = "Number_txtbox";
             this.Number_txtbox.Size = new System.Drawing.Size(177, 26);
             this.Number_txtbox.TabIndex = 28;
@@ -287,7 +287,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(907, 273);
+            this.label10.Location = new System.Drawing.Point(907, 226);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(113, 20);
             this.label10.TabIndex = 27;
@@ -301,35 +301,17 @@
             this.Question_txtbox.TabIndex = 29;
             this.Question_txtbox.TextChanged += new System.EventHandler(this.Question_txtbox_TextChanged);
             // 
-            // LastName_txtbox
-            // 
-            this.LastName_txtbox.Location = new System.Drawing.Point(911, 138);
-            this.LastName_txtbox.Name = "LastName_txtbox";
-            this.LastName_txtbox.Size = new System.Drawing.Size(177, 26);
-            this.LastName_txtbox.TabIndex = 31;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(907, 115);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 20);
-            this.label11.TabIndex = 30;
-            this.label11.Text = "Last Name";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
-            this.Controls.Add(this.LastName_txtbox);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.Question_txtbox);
             this.Controls.Add(this.Number_txtbox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.Email_txtbox);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.Confirmbtn2);
+            this.Controls.Add(this.ConfirmbtnPLR);
             this.Controls.Add(this.Age_txtbox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Name_txtbox);
@@ -344,7 +326,7 @@
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.Confirmbtn1);
+            this.Controls.Add(this.ConfirmbtnCR);
             this.Controls.Add(this.Antwd1_txtbox);
             this.Controls.Add(this.Antwd2_txtbox);
             this.Controls.Add(this.Antwd3_txtbox);
@@ -369,7 +351,7 @@
         private System.Windows.Forms.TextBox Antwd3_txtbox;
         private System.Windows.Forms.TextBox Antwd2_txtbox;
         private System.Windows.Forms.TextBox Antwd1_txtbox;
-        private System.Windows.Forms.Button Confirmbtn1;
+        private System.Windows.Forms.Button ConfirmbtnCR;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
@@ -384,14 +366,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox Age_txtbox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button Confirmbtn2;
+        private System.Windows.Forms.Button ConfirmbtnPLR;
         private System.Windows.Forms.TextBox Email_txtbox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox Number_txtbox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox Question_txtbox;
-        private System.Windows.Forms.TextBox LastName_txtbox;
-        private System.Windows.Forms.Label label11;
     }
 }
 

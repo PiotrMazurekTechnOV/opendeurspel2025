@@ -7,18 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;  
 
 namespace AdminPanel
 {
     public partial class Form1 : Form
     {
+        static HttpClient client;
         public Form1()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-            
+            client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:8081/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -101,6 +109,13 @@ namespace AdminPanel
 
 
         }
+        private void ConfirmbtnCR_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+
+
 
         private void Question_txtbox_TextChanged(object sender, EventArgs e)
         {
@@ -121,8 +136,7 @@ namespace AdminPanel
             Email_txtbox.Hide();
             Age_txtbox.Text = "";
             Age_txtbox.Hide();
-            LastName_txtbox.Hide();
-            LastName_txtbox.Text = "";
+            
 
 
 
@@ -141,11 +155,7 @@ namespace AdminPanel
                 Email_txtbox.Text = "";
                 Name_txtbox.Show();
                 Name_txtbox.Text = "";
-                LastName_txtbox.Show();
-                LastName_txtbox.Text = "";
-
-
-
+             
             }
             else if (comboBox_Player.SelectedItem != null && comboBox_Player.SelectedItem.ToString() == "Jon")
             {
@@ -159,8 +169,7 @@ namespace AdminPanel
                 Email_txtbox.Text = "";
                 Name_txtbox.Show();
                 Name_txtbox.Text = "";
-                LastName_txtbox.Show();
-                LastName_txtbox.Text = "";
+               
 
 
             }
@@ -176,12 +185,41 @@ namespace AdminPanel
                 Email_txtbox.Text = "Talha.muhammad@leerling.kov.be";
                 Name_txtbox.Show();
                 Name_txtbox.Text = "Talha";
-                LastName_txtbox.Show();
-                LastName_txtbox.Text = "Muhammad";
+               
 
             }
 
+        }
 
+
+        static async Task<string> AddUser(string nameN,int ageN, bool consentN, int gsm_numberN, string emailN)
+        {
+            User user = new User
+            {
+                name = nameN,
+                age = ageN,
+                consent = consentN,
+                gsm_number = gsm_numberN,
+                email = emailN
+            };
+
+            StringContent json = new StringContent(JsonConvert.SerializeObject(user, Formatting.Indented), Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync("/user/create", json);
+
+            response.EnsureSuccessStatusCode();
+
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+
+            return jsonResponse;
+        }
+
+
+        private async void ConfirmbtnPLR_Click(object sender, EventArgs e)
+        {
+            var response = await AddUser("franklin saint", 21, true, 042222222, "naam@leerling.kov.be");
+
+            MessageBox.Show(response);
 
         }
 
@@ -212,5 +250,21 @@ namespace AdminPanel
             }
 
         }
+
+
+        public class User
+        {
+            public int code { get; set; }
+            public string name { get; set; }
+            public int age { get; set; }
+            public bool consent { get; set; }
+            public string email { get; set; }
+            public int gsm_number { get; set; }
+
+        }
+
+
+
+
     }
 }

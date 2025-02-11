@@ -39,7 +39,7 @@ app.post("/user/create", async (req, res) => {
       await con.end(); 
       res.status(201).json({ message: "User created successfully!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 

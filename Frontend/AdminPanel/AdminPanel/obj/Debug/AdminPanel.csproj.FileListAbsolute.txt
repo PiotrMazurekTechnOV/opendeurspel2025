@@ -8,3 +8,6 @@ C:\quizgame2025\opendeurspel2025\Frontend\AdminPanel\AdminPanel\obj\Debug\AdminP
 C:\quizgame2025\opendeurspel2025\Frontend\AdminPanel\AdminPanel\obj\Debug\AdminPanel.csproj.CoreCompileInputs.cache
 C:\quizgame2025\opendeurspel2025\Frontend\AdminPanel\AdminPanel\obj\Debug\AdminPanel.exe
 C:\quizgame2025\opendeurspel2025\Frontend\AdminPanel\AdminPanel\obj\Debug\AdminPanel.pdb
+C:\quizgame2025\opendeurspel2025\Frontend\AdminPanel\AdminPanel\bin\Debug\Newtonsoft.Json.dll
+C:\quizgame2025\opendeurspel2025\Frontend\AdminPanel\AdminPanel\bin\Debug\Newtonsoft.Json.xml
+C:\quizgame2025\opendeurspel2025\Frontend\AdminPanel\AdminPanel\obj\Debug\AdminPanel.csproj.Up2Date
