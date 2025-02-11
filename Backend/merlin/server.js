@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mysql = require("mysql2/promise");
 const bodyParser = require("body-parser");
-require('dotenv').config()
+require("dotenv").config()
 
 // Middleware
 app.use(express.json());
@@ -88,7 +88,7 @@ app.post("/question/update", async (req, res)=>{
       return res.status(400).json({error: "All fields are required."});
     }
     const con = await connect(); 
-      const query = `UPDATE questions SET text = ? WHERE location_id = ?`;
+      const query = "UPDATE questions SET text = ? WHERE location_id = ?";
       await con.execute(query, [location_id, text]);
 
       await con.end(); 
@@ -148,7 +148,6 @@ app.get("/question/read",(req,res,next)=>{
       }
 })
 
-
 // Start server
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
@@ -157,4 +156,7 @@ app.listen(PORT, () => {
 app.get("/", (req, res) => {
   res.send("WELKOM!!!");
 });
+
+// Close the database connection
+connection.end();
 
