@@ -124,7 +124,7 @@ app.delete("/question/:id", async (req, res) => {
 
 
 //READ ALL ID QUESTIONS RESPONDED
-app.get("/question/read",(req,res,next)=>{
+app.get("/question/read/:id",(req,res,next)=>{
     try {
         const { id } = req.params; // Get the question ID from the URL
     
