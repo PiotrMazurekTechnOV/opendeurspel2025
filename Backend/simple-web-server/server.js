@@ -121,6 +121,36 @@ app.delete("/question/:id", async (req, res) => {
     res.status(500).json({ error: "Something went wrong." });
   }
 });
+
+app.get("/question/read/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params; // Get the question ID from the URL
+
+    if (!id) {
+      return res.status(400).json({ error: "Please provide a question ID." });
+    }
+
+    const con = await connect(); // Ensure connect() is async if using mysql2/promise
+    const query = "SELECT * FROM questions WHERE id = ?";
+    
+    // Execute query properly
+    const [rows] = await con.execute(query, [id]);
+    console.log(rows)
+    con.end(); // Close connection after the query
+
+    if (rows.length === 0) { // Check if the result set is empty
+      return res.status(404).json({ error: "Question not found." });
+    }
+
+    res.json({ message: "Question read successfully!", data: rows });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+
+
 // Start server
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
