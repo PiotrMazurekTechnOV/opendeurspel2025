@@ -23,7 +23,7 @@ namespace RegistratieProgram
 
         private void Form_Load(object sender, EventArgs e)
         {
-            
+            voornaam_label.Location = new Point(Form, 140);
         }
 
         private void registratie_btn_Click(object sender, EventArgs e)

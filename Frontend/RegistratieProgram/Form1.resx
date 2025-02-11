@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="uitleg_game.Text" xml:space="preserve">
+    <value>Je zal door meerdere lokalen 
+schermen zien, daar zal er
+vragen opgeschreven zijn.
+Voor elke juiste antwoord krijg
+je een punt.
+Maar je zal opmerken dat elke
+scherm een code vraagt,
+de code die je zal krijgen zal
+jouw profiel voorstellen.
+Op het einde van de quiz zal je
+dezelefde code doorgeven aan
+een leerkracht die aan de ... staat
+zal hij/zij jouw totale score meegeven.</value>
+  </data>
 </root>

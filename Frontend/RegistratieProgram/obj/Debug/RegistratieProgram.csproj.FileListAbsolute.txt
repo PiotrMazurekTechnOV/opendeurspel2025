@@ -18,3 +18,5 @@ C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\R
 C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.csproj.CoreCompileInputs.cache
 C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.exe
 C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.pdb
+C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\bin\Debug\MaterialSkin.dll
+C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.csproj.CopyComplete
