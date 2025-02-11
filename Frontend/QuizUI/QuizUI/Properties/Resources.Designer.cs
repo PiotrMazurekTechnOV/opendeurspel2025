@@ -73,6 +73,16 @@ namespace QuizUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ODS2025BG2 {
+            get {
+                object obj = ResourceManager.GetObject("ODS2025BG2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap registratietechnov {
             get {
                 object obj = ResourceManager.GetObject("registratietechnov", resourceCulture);
