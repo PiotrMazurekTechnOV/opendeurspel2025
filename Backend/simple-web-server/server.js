@@ -23,6 +23,7 @@ async function connect() {
     }
 }
 //CREATE
+//user
 app.post("/user/create", async (req, res) => {
   try {
       const { name, age, email, gsm_number, code, consent } = req.body;
@@ -38,6 +39,86 @@ app.post("/user/create", async (req, res) => {
 
       await con.end(); 
       res.status(201).json({ message: "User created successfully!" });
+  } catch (error) {
+    res.json(err);
+  }
+});
+//questions
+app.post("/question/create", async (req, res) => {
+  try {
+      const { id, location_id, text } = req.body;
+
+      if (!id || !location_id || !text) {
+          return res.status(400).json({ error: "All fields are required." });
+      }
+
+      const con = await connect(); 
+      const query = `INSERT INTO users (id, location_id, text) VALUES 
+      (?, ?, ?)`;
+      await con.execute(query, [name, age, email, gsm_number, code, consent]);
+
+      await con.end(); 
+      res.status(201).json({ message: "Question created successfully!" });
+  } catch (error) {
+    res.json(err);
+  }
+});
+//answers
+app.post("/answers/create", async (req, res) => {
+  try {
+      const { id, text, correct, question_id } = req.body;
+
+      if (!id || !text || !correct ||!question_id) {
+          return res.status(400).json({ error: "All fields are required." });
+      }
+
+      const con = await connect(); 
+      const query = `INSERT INTO users (id, text, correct, question_id) VALUES 
+      (?, ?, ?, ?)`;
+      await con.execute(query, [name, age, email, gsm_number, code, consent]);
+
+      await con.end(); 
+      res.status(201).json({ message: "Answer created successfully!" });
+  } catch (error) {
+    res.json(err);
+  }
+});
+//locations
+app.post("/locations/create", async (req, res) => {
+  try {
+      const { id, number, name } = req.body;
+
+      if (!id || !number || !name) {
+          return res.status(400).json({ error: "All fields are required." });
+      }
+
+      const con = await connect(); 
+      const query = `INSERT INTO users (id, number, name) VALUES 
+      (?, ?, ?)`;
+      await con.execute(query, [name, age, email, gsm_number, code, consent]);
+
+      await con.end(); 
+      res.status(201).json({ message: "Location created successfully!" });
+  } catch (error) {
+    res.json(err);
+  }
+});
+//scores
+app.post("/scores/create", async (req, res) => {
+  try {
+      const { id, user_id, question_id, correct } = req.body;
+
+      if (!id || !user_id || !question_id ||!correct) {
+          return res.status(400).json({ error: "All fields are required." });
+      }
+
+      const con = await connect(); 
+      const query = `INSERT INTO users (id, user_id, question_id, correct) VALUES 
+      (?, ?, ?, ?)`;
+      await con.execute(query, [name, age, email, gsm_number, code, consent]);
+
+      await con.end(); 
+      res.status(201).json({ message: "Scores created successfully!" });
   } catch (error) {
     res.json(err);
   }
@@ -138,7 +219,7 @@ app.get("/question/read/:id", async (req, res, next) => {
     console.log(rows)
     con.end(); // Close connection after the query
 
-    if (rows.length === 0) { // Check if the result set is empty
+    if (rows.length === 0) { // Checking if the result set is empty
       return res.status(404).json({ error: "Question not found." });
     }
 
