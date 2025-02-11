@@ -118,10 +118,11 @@ app.delete("/question/:id", async (req, res) => {
 
     res.json({ message: "Question deleted successfully!" });
   } catch (error) {
-    res.status(500).json({ error: "Something went wrong." });
+    res.status(500).json({ error: "Something went wrong with the server" });
   }
 });
 
+//READ
 app.get("/question/read/:id", async (req, res, next) => {
   try {
     const { id } = req.params; // Get the question ID from the URL
@@ -130,15 +131,14 @@ app.get("/question/read/:id", async (req, res, next) => {
       return res.status(400).json({ error: "Please provide a question ID." });
     }
 
-    const con = await connect(); // Ensure connect() is async if using mysql2/promise
+    const con = await connect(); 
     const query = "SELECT * FROM questions WHERE id = ?";
     
-    // Execute query properly
     const [rows] = await con.execute(query, [id]);
     console.log(rows)
-    con.end(); // Close connection after the query
+    con.end(); 
 
-    if (rows.length === 0) { // Check if the result set is empty
+    if (rows.length === 0) { 
       return res.status(404).json({ error: "Question not found." });
     }
 
@@ -146,10 +146,9 @@ app.get("/question/read/:id", async (req, res, next) => {
 
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Something went wrong." });
+    res.status(500).json({ error: "Something went wrong with the server." });
   }
 });
-
 
 // Start server
 const PORT = process.env.PORT;
