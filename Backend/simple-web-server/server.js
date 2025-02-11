@@ -60,7 +60,7 @@ app.post("/user/update", async (req, res) => {
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 
@@ -77,10 +77,41 @@ app.post("/location/update", async (req, res)=>{
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }}
 );
+app.post("/answer/update/", async (req, res)=>{
+  try {
+    const { text, correct, question_id} = req.body;
+    if( !correct|| !question_id || !text) {
+      return res.status(400).json({error: "All fields are required."});
+    }
+    const con = await connect(); 
+      const query = `UPDATE answers SET text = ?, correct = ?, Where question_id = ?`;
+      await con.execute(query, [location_id, text]);
 
+      await con.end(); 
+      res.status(200).json({ message: "Data updated!" });
+  } catch (error) {
+    res.json(error);
+  }}
+);
+app.post("/score/update/", async (req, res)=>{
+  try {
+    const { user_id, question_id, correct} = req.body;
+    if(!user_id || !question_id || !correct) {
+      return res.status(400).json({error: "All fields are required."});
+    }
+    const con = await connect(); 
+      const query = `UPDATE scores SET user_id = ?, correct = ?, WHERE location_id = ?`;
+      await con.execute(query, [location_id, text]);
+
+      await con.end(); 
+      res.status(200).json({ message: "Data updated!" });
+  } catch (error) {
+    res.json(error);
+  }}
+);
 app.post("/question/update/", async (req, res)=>{
   try {
     const { location_id, text} = req.body;
@@ -94,7 +125,7 @@ app.post("/question/update/", async (req, res)=>{
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }}
 );
 // DELETE 
