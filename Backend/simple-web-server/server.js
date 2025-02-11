@@ -225,7 +225,7 @@ app.get("/question/read/:id", async (req, res, next) => {
       return res.status(404).json({ error: "Question not found." });
     }
 
-    res.json({ message: "Question read successfully!", data: rows });
+    res.json({ data: rows });
 
   } catch (error) {
     console.error(error);
@@ -253,7 +253,7 @@ app.get("/users/read/:id", async (req, res, next) => {
       return res.status(404).json({ error: "User not found." });
     }
 
-    res.json({ message: "User read successfully!", data: rows });
+    res.json({ data: rows });
 
   } catch (error) {
     console.error(error);
@@ -281,7 +281,7 @@ app.get("/answers/read/:id", async (req, res, next) => {
       return res.status(404).json({ error: "Answer not found." });
     }
 
-    res.json({ message: "Answer read successfully!", data: rows });
+    res.json({ data: rows });
 
   } catch (error) {
     console.error(error);
@@ -309,7 +309,7 @@ app.get("/locations/read/:id", async (req, res, next) => {
       return res.status(404).json({ error: "Location not found." });
     }
 
-    res.json({ message: "Location read successfully!", data: rows });
+    res.json({ data: rows });
 
   } catch (error) {
     console.error(error);
@@ -337,7 +337,7 @@ app.get("/scores/read/:id", async (req, res, next) => {
       return res.status(404).json({ error: " not found." });
     }
 
-    res.json({ message: "User read successfully!", data: rows });
+    res.json({ data: rows });
 
   } catch (error) {
     console.error(error);
