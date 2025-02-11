@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: opendeuravond2025
+-- Host: 127.0.0.1    Database: opendeurspel2025
 -- ------------------------------------------------------
--- Server version	8.3.0
+-- Server version	8.0.40
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -24,10 +24,11 @@ DROP TABLE IF EXISTS `answers`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `answers` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `text` varchar(45) DEFAULT NULL,
-  `correct` tinyint DEFAULT NULL,
+  `text` varchar(45) NOT NULL,
+  `correct` tinyint NOT NULL,
   `question_id` int NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `question_id_idx` (`question_id`),
   CONSTRAINT `fk_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -144,8 +145,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `code_UNIQUE` (`code`),
-  UNIQUE KEY `email_UNIQUE` (`email`),
-  UNIQUE KEY `gsm_number_UNIQUE` (`gsm_number`)
+  UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -167,4 +167,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-28 10:43:34
+-- Dump completed on 2025-02-11 10:41:04
