@@ -204,6 +204,34 @@ app.delete("/question/:id", async (req, res) => {
 });
 
 //READ
+//read correct answers
+app.get("/question/read/correct/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params; // Get the question ID from the URL
+
+    if (!id) {
+      return res.status(400).json({ error: "Please provide a question ID." });
+    }
+
+    const con = await connect(); 
+    const query = "SELECT opendeurspel2025.answers.text FROM opendeurspel2025.answers JOIN ON opendeurspel2025.scores WHERE opendeurspel2025.answers.text = opendeurspel2025.scores.correct AND opendeurspel2025.users.id = 2;";
+    
+    const [rows] = await con.execute(query, [id]);
+    console.log(rows)
+    con.end(); 
+
+    if (rows.length === 0) { // Checking if the result set is empty
+      return res.status(404).json({ error: "Question not found." });
+    }
+
+    res.json({ message: "Question read successfully!", data: rows });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Something went wrong with the server." });
+  }
+});
+
 //Read question
 app.get("/question/read/:id", async (req, res, next) => {
   try {
