@@ -40,8 +40,8 @@
             this.QuizTxt.AutoSize = true;
             this.QuizTxt.BackColor = System.Drawing.Color.Transparent;
             this.QuizTxt.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuizTxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.QuizTxt.Location = new System.Drawing.Point(502, 216);
+            this.QuizTxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.QuizTxt.Location = new System.Drawing.Point(491, 211);
             this.QuizTxt.Name = "QuizTxt";
             this.QuizTxt.Size = new System.Drawing.Size(527, 50);
             this.QuizTxt.TabIndex = 2;
@@ -139,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::QuizUI.Properties.Resources.technovquiz__1_;
+            this.BackgroundImage = global::QuizUI.Properties.Resources.ODS2025BG2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.button4);
@@ -148,6 +148,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.QuizTxt);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
