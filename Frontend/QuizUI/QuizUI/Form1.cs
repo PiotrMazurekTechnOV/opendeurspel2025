@@ -17,9 +17,21 @@ namespace QuizUI
 {
     public partial class Form1 : Form
     {
+
+        static HttpClient client;
         public Form1()
         {
+
+            
+
             InitializeComponent();
+
+            client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:8081/api/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+            new MediaTypeWithQualityHeaderValue("application/json"));
+
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
@@ -35,8 +47,13 @@ namespace QuizUI
            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
+            
+            
+            
+            
+            
             MessageBox.Show("Button 1 werkt.");
         }
 
