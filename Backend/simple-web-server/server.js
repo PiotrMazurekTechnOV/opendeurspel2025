@@ -121,10 +121,6 @@ app.delete("/question/delete/:id", async (req, res) => {
     res.status(500).json({ error: "Something went wrong." });
   }
 });
-<<<<<<< Updated upstream
-=======
-// READ
->>>>>>> Stashed changes
 
 // Start server
 const PORT = process.env.PORT;
