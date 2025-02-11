@@ -17,9 +17,9 @@ async function connect() {
             password: process.env.PASSWORD,
             database: process.env.DB,
         });
-    } catch (err) {
-        console.error("Error connecting to the database:", err.message);
-        throw err;
+    } catch (error) {
+        console.error("Error connecting to the database:", error.message);
+        throw error;
     }
 }
 //CREATE
@@ -40,7 +40,7 @@ app.post("/user/create", async (req, res) => {
       await con.end(); 
       res.status(201).json({ message: "User created successfully!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 //questions
@@ -60,7 +60,7 @@ app.post("/question/create", async (req, res) => {
       await con.end(); 
       res.status(201).json({ message: "Question created successfully!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 //answers
@@ -80,7 +80,7 @@ app.post("/answers/create", async (req, res) => {
       await con.end(); 
       res.status(201).json({ message: "Answer created successfully!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 //locations
@@ -100,7 +100,7 @@ app.post("/locations/create", async (req, res) => {
       await con.end(); 
       res.status(201).json({ message: "Location created successfully!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 //scores
@@ -120,7 +120,7 @@ app.post("/scores/create", async (req, res) => {
       await con.end(); 
       res.status(201).json({ message: "Scores created successfully!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 
@@ -141,7 +141,7 @@ app.post("/user/update", async (req, res) => {
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 
@@ -158,7 +158,7 @@ app.post("/location/update", async (req, res)=>{
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }}
 );
 
@@ -175,7 +175,7 @@ app.post("/question/update", async (req, res)=>{
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }}
 );
 // DELETE 
