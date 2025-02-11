@@ -122,6 +122,32 @@ app.delete("/question/:id", async (req, res) => {
   }
 });
 
+// DELETE USERS 
+app.delete("/user/:id", async (req, res) => {
+  try {
+    const { id } = req.params; // Haal het user ID uit de URL
+
+    if (!id) {
+      return res.status(400).json({ error: "Please provide a user ID." });
+    }
+
+    const con = await connect(); 
+    const query = "DELETE FROM users WHERE id = ?"; 
+    const [result] = await con.execute(query, [id]); // Voer de delete query uit
+
+    await con.end(); 
+    
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "User not found." });
+    }
+
+    res.json({ message: "User deleted successfully!" });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+
+
 // Start server
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
