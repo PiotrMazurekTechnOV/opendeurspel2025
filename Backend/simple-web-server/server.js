@@ -98,7 +98,7 @@ app.post("/question/update", async (req, res)=>{
   }}
 );
 // DELETE 
-app.delete("/question/:id", async (req, res) => {
+app.get("/question/delete/:id", async (req, res) => {
   try {
     const { id } = req.params; // Get the question ID from the URL
 
@@ -123,7 +123,7 @@ app.delete("/question/:id", async (req, res) => {
 });
 
 // DELETE USERS 
-app.delete("/user/:id", async (req, res) => {
+app.get("/user/delete/:id", async (req, res) => {
   try {
     const { id } = req.params; // Haal het user ID uit de URL
 
@@ -146,6 +146,32 @@ app.delete("/user/:id", async (req, res) => {
     res.status(500).json({ error: "Something went wrong." });
   }
 });
+
+// DELETE ANSWER
+app.get("/answer/delete/:id", async (req, res) => {
+  try {
+    const { id } = req.params; // Haal het answer ID uit de URL
+
+    if (!id) {
+      return res.status(400).json({ error: "Please provide an answer ID." });
+    }
+
+    const con = await connect(); 
+    const query = "DELETE FROM answers WHERE id = ?"; 
+    const [result] = await con.execute(query, [id]); // Voer de delete query uit
+
+    await con.end(); 
+    
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Answer not found." });
+    }
+
+    res.json({ message: "Answer deleted successfully!" });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+
 
 
 // Start server
