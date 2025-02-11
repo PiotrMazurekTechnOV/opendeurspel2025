@@ -81,7 +81,7 @@ app.post("/location/update", async (req, res)=>{
   }}
 );
 
-app.post("/question/update", async (req, res)=>{
+app.post("/question/update/", async (req, res)=>{
   try {
     const { location_id, text} = req.body;
     if(!location_id || !text) {
@@ -98,9 +98,9 @@ app.post("/question/update", async (req, res)=>{
   }}
 );
 // DELETE 
-app.delete("/question/:id", async (req, res) => {
+app.delete("/question/delete/:id", async (req, res) => {
   try {
-    const { id } = req.params; // Get the question ID from the URL
+    const { id } = req.params; // Get question ID from URL
 
     if (!id) {
       return res.status(400).json({ error: "Please provide a question ID." });
@@ -121,6 +121,10 @@ app.delete("/question/:id", async (req, res) => {
     res.status(500).json({ error: "Something went wrong." });
   }
 });
+<<<<<<< Updated upstream
+=======
+// READ
+>>>>>>> Stashed changes
 
 // Start server
 const PORT = process.env.PORT;
