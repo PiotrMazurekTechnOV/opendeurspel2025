@@ -1,0 +1,7 @@
+API:
+
+De API moet vragen  kunnen toevoegen en aanpassen , usernames kunnen toevoegen 
+
+we gaan een systeem maken voor CRUD create,read,update en deleate
+
+we krijgen info binnen en we moeten weten waar het in de database moet geplaatst worden ook omgekeerd
