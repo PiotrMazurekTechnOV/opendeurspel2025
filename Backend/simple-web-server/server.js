@@ -218,7 +218,7 @@ app.post("/question/update/", async (req, res)=>{
 );
 
 // DELETE 
-app.delete("/question/delete/:id", async (req, res) => {
+app.get("/question/delete/:id", async (req, res) => {
   try {
     const { id } = req.params; // Get question ID from URL
 
@@ -241,6 +241,7 @@ app.delete("/question/delete/:id", async (req, res) => {
     res.status(500).json({ error: "Something went wrong with the server" });
   }
 });
+
 
 //READ
 //read correct answers
@@ -303,11 +304,8 @@ app.get("/users/read/:id", async (req, res, next) => {
   try {
     const { id } = req.params; 
 
-    if (!id) {
-      return res.status(400).json({ error: "Please provide a user ID." });
-    }
-
     const con = await connect(); 
+
     const query = "SELECT * FROM users WHERE id = ?";
     
     // Execute query properly
@@ -326,15 +324,36 @@ app.get("/users/read/:id", async (req, res, next) => {
     res.status(500).json({ error: "Something went wrong." });
   }
 });
+
+
+// DELETE USERS 
+app.get("/user/delete/:id", async (req, res) => {
+  try {
+    const { id } = req.params; // Haal het user ID uit de URL
+
+    if (!id) {
+      return res.status(400).json({ error: "Please provide a user ID." });
+    }
+    const query = "DELETE FROM users WHERE id = ?"; 
+    const [result] = await con.execute(query, [id]); // Voer de delete query uit
+
+    await con.end(); 
+    
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "User not found." });
+    }
+
+    res.json({ message: "User deleted successfully!" });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+
+    
 //Read answers
 app.get("/answers/read/:id", async (req, res, next) => {
   try {
     const { id } = req.params; 
-
-    if (!id) {
-      return res.status(400).json({ error: "Please provide an answer ID." });
-    }
-
     const con = await connect(); 
     const query = "SELECT * FROM answers WHERE id = ?";
     
@@ -354,6 +373,36 @@ app.get("/answers/read/:id", async (req, res, next) => {
     res.status(500).json({ error: "Something went wrong." });
   }
 });
+
+
+   
+
+// DELETE ANSWER
+app.get("/answer/delete/:id", async (req, res) => {
+  try {
+    const { id } = req.params; // Haal het answer ID uit de URL
+
+
+    if (!id) {
+      return res.status(400).json({ error: "Please provide an answer ID." });
+    }
+    const query = "DELETE FROM answers WHERE id = ?"; 
+    const [result] = await con.execute(query, [id]); // Voer de delete query uit
+
+    await con.end(); 
+    
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Answer not found." });
+    }
+
+    res.json({ message: "Answer deleted successfully!" });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+
+    
+    
 //Read Locations
 app.get("/locations/read/:id", async (req, res, next) => {
   try {
@@ -407,6 +456,31 @@ app.get("/scores/read/:id", async (req, res, next) => {
 
   } catch (error) {
     console.error(error);
+  }});
+    
+
+
+//DELETE location
+app.get("/location/delete/:id", async (req, res) => {
+  try {
+    const { id } = req.params; // Haal het answer ID uit de URL
+
+    if (!id) {
+      return res.status(400).json({ error: "Please provide an location ID." });
+    }
+
+    const con = await connect(); 
+    const query = "DELETE FROM location WHERE id = ?"; 
+    const [result] = await con.execute(query, [id]); // Voer de delete query uit
+
+    await con.end(); 
+    
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Location not found." });
+    }
+
+    res.json({ message: "Location deleted successfully!" });
+  } catch (error) {
     res.status(500).json({ error: "Something went wrong." });
   }
 });
