@@ -130,6 +130,3 @@ Na een paar commits:
 - Druk op Administration en klick op data import
 - Selecteer import van self-contained file
 - Selecteer het bestand en export
-
-[![Visualization of the codebase](./diagram.svg)](https://octo-repo-visualization.vercel.app/?repo=integerman%2FVisualizingCode)
-[View interactive Diagram](https://octo-repo-visualization.vercel.app/?repo=integerman%2FVisualizingCode)
