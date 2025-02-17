@@ -33,6 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.apitestBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // QuizTxt
@@ -135,6 +136,26 @@
             this.button4.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
             this.button4.MouseHover += new System.EventHandler(this.button4_MouseHover);
             // 
+            // apitestBtn
+            // 
+            this.apitestBtn.BackColor = System.Drawing.Color.Transparent;
+            this.apitestBtn.BackgroundImage = global::QuizUI.Properties.Resources.button;
+            this.apitestBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.apitestBtn.FlatAppearance.BorderSize = 0;
+            this.apitestBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.apitestBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.apitestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.apitestBtn.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apitestBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.apitestBtn.Location = new System.Drawing.Point(500, 303);
+            this.apitestBtn.Name = "apitestBtn";
+            this.apitestBtn.Size = new System.Drawing.Size(920, 99);
+            this.apitestBtn.TabIndex = 7;
+            this.apitestBtn.Text = "   test api";
+            this.apitestBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.apitestBtn.UseVisualStyleBackColor = false;
+            this.apitestBtn.Click += new System.EventHandler(this.apitestBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +163,7 @@
             this.BackgroundImage = global::QuizUI.Properties.Resources.ODS2025BG2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.apitestBtn);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -163,6 +185,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button apitestBtn;
     }
 }
 

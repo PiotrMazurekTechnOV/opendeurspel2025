@@ -106,5 +106,14 @@ namespace QuizUI
         {
 
         }
+
+        private void apitestBtn_Click(object sender, EventArgs e)
+        {
+            var response = await AddUser("test", "test2", 20, true, "testtest", "test@test.com");
+
+            MessageBox.Show(response);
+
+
+        }
     }
 }
