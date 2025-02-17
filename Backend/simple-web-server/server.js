@@ -17,9 +17,15 @@ async function connect() {
             password: process.env.PASSWORD,
             database: process.env.DB,
         });
+<<<<<<< Updated upstream
     } catch (err) {
         console.error("Error connecting to the database:", err.message);
         throw err;
+=======
+    } catch (error) {
+        console.error("Error connecting to the database:", error.message);
+        throw error;
+>>>>>>> Stashed changes
     }
 }
 //CREATE
@@ -39,7 +45,11 @@ app.post("/user/create", async (req, res) => {
       await con.end(); 
       res.status(201).json({ message: "User created successfully!" });
   } catch (error) {
+<<<<<<< Updated upstream
     res.json(err);
+=======
+    res.json(error);
+>>>>>>> Stashed changes
   }
 });
 
@@ -48,7 +58,11 @@ app.post("/user/update", async (req, res) => {
   try {
       const { name, age, email, gsm_number, code, consent } = req.body;
 
+<<<<<<< Updated upstream
       if (!name || !age || !consent) {
+=======
+      if (!name || !age || !email || !code || !consent) {
+>>>>>>> Stashed changes
           return res.status(400).json({ error: "All fields are required." });
       }
 
@@ -60,7 +74,11 @@ app.post("/user/update", async (req, res) => {
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
+<<<<<<< Updated upstream
     res.json(err);
+=======
+    res.json(error);
+>>>>>>> Stashed changes
   }
 });
 
@@ -77,7 +95,11 @@ app.post("/location/update", async (req, res)=>{
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
+<<<<<<< Updated upstream
     res.json(err);
+=======
+    res.json(error);
+>>>>>>> Stashed changes
   }}
 );
 
@@ -94,7 +116,11 @@ app.post("/question/update", async (req, res)=>{
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
+<<<<<<< Updated upstream
     res.json(err);
+=======
+    res.json(error);
+>>>>>>> Stashed changes
   }}
 );
 // DELETE 
@@ -122,6 +148,106 @@ app.delete("/question/:id", async (req, res) => {
   }
 });
 
+<<<<<<< Updated upstream
+=======
+//SELECT
+app.get("/users/:id", async (req, res) => {
+  try {
+    const { id, username, age, email, gsm_number, code, consent } = req.params; // Get the ID from the users table from the URL
+
+    if (!id) {
+      return res.status(400).json({ error: "Please select an existing ID in table users." });
+    }
+
+    const con = await connect();
+    const query = "SELECT * FROM users WHERE id = ?, username = ?, age = ?, email = ?, gsm_number = ?, code = ?, consent = ?";
+    const [result] = await con.execute(query, [id, username, age, email, gsm_number, code, consent ]); // Run the query
+
+    await con.end();
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "User not found." })
+    }
+
+    res.json({ message: "User found!" });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+
+app.get("/locations/:id", async (req, res) => {
+  try {
+    const { id, number, name } = req.params; // Get the ID from the users table from the URL
+
+    if (!id) {
+      return res.status(400).json({ error: "Please select an existing ID in table locations." });
+    }
+
+    const con = await connect();
+    const query = "SELECT * FROM users WHERE id = ?, number = ?, name = ?";
+    const [result] = await con.execute(query, [id, number, name]); // Run the query
+
+    await con.end();
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Location not found." })
+    }
+
+    res.json({ message: "Location found!" });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+
+app.get("/questions/:id", async (req, res) => {
+  try {
+    const { id, location_id, text } = req.params; // Get the ID from the users table from the URL
+
+    if (!id) {
+      return res.status(400).json({ error: "Please select an existing ID in table locations." });
+    }
+
+    const con = await connect();
+    const query = "SELECT * FROM users WHERE id = ?, location_id = ?, text = ?";
+    const [result] = await con.execute(query, [id, location_id, text]); // Run the query
+
+    await con.end();
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Question not found." })
+    }
+
+    res.json({ message: "Question found!" });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+
+app.get("/answers/:id", async (req, res) => {
+  try {
+    const { id, text, correct, question_id } = req.params; // Get the ID from the users table from the URL
+
+    if (!id) {
+      return res.status(400).json({ error: "Please select an existing ID in table locations." });
+    }
+
+    const con = await connect();
+    const query = "SELECT * FROM users WHERE id = ?, text = ?, correct = ?, question_id = ?";
+    const [result] = await con.execute(query, [id, text, correct, question_id]); // Run the query
+
+    await con.end();
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Answer not found." })
+    }
+
+    res.json({ message: "Answer found!" });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+
+>>>>>>> Stashed changes
 // Start server
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
@@ -129,5 +255,9 @@ app.listen(PORT, () => {
 });
 app.get("/", (req, res) => {
   res.send("WELKOM!!!");
+<<<<<<< Updated upstream
 });
 
+=======
+});
+>>>>>>> Stashed changes
