@@ -185,6 +185,7 @@ namespace AdminPanel
                 Email_txtbox.Text = "Talha.muhammad@leerling.kov.be";
                 Name_txtbox.Show();
                 Name_txtbox.Text = "Talha";
+                
                
 
             }
@@ -213,11 +214,12 @@ namespace AdminPanel
 
             return jsonResponse;
         }
+        
 
 
         private async void ConfirmbtnPLR_Click(object sender, EventArgs e)
         {
-            var response = await AddUser("franklin saint", 21, true, 042222222, "naam@leerling.kov.be");
+            var response = await AddUser(Name_txtbox.Text, Convert.ToInt32(Age_txtbox.Text), ConsenctCheckBx.Checked, Convert.ToInt32(Number_txtbox.Text), Email_txtbox.Text);
 
             MessageBox.Show(response);
 

@@ -56,6 +56,7 @@
             this.Number_txtbox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Question_txtbox = new System.Windows.Forms.TextBox();
+            this.ConsenctCheckBx = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // comboBox_Lokalen
@@ -253,7 +254,7 @@
             // 
             // ConfirmbtnPLR
             // 
-            this.ConfirmbtnPLR.Location = new System.Drawing.Point(911, 299);
+            this.ConfirmbtnPLR.Location = new System.Drawing.Point(911, 361);
             this.ConfirmbtnPLR.Name = "ConfirmbtnPLR";
             this.ConfirmbtnPLR.Size = new System.Drawing.Size(75, 53);
             this.ConfirmbtnPLR.TabIndex = 24;
@@ -301,11 +302,22 @@
             this.Question_txtbox.TabIndex = 29;
             this.Question_txtbox.TextChanged += new System.EventHandler(this.Question_txtbox_TextChanged);
             // 
+            // ConsenctCheckBx
+            // 
+            this.ConsenctCheckBx.AutoSize = true;
+            this.ConsenctCheckBx.Location = new System.Drawing.Point(911, 288);
+            this.ConsenctCheckBx.Name = "ConsenctCheckBx";
+            this.ConsenctCheckBx.Size = new System.Drawing.Size(95, 24);
+            this.ConsenctCheckBx.TabIndex = 30;
+            this.ConsenctCheckBx.Text = "Consent";
+            this.ConsenctCheckBx.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
+            this.Controls.Add(this.ConsenctCheckBx);
             this.Controls.Add(this.Question_txtbox);
             this.Controls.Add(this.Number_txtbox);
             this.Controls.Add(this.label10);
@@ -372,6 +384,7 @@
         private System.Windows.Forms.TextBox Number_txtbox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox Question_txtbox;
+        private System.Windows.Forms.CheckBox ConsenctCheckBx;
     }
 }
 
