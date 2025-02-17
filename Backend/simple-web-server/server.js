@@ -173,6 +173,34 @@ app.get("/answer/delete/:id", async (req, res) => {
 });
 
 
+//DELETE location
+app.get("/location/delete/:id", async (req, res) => {
+  try {
+    const { id } = req.params; // Haal het answer ID uit de URL
+
+    if (!id) {
+      return res.status(400).json({ error: "Please provide an location ID." });
+    }
+
+    const con = await connect(); 
+    const query = "DELETE FROM location WHERE id = ?"; 
+    const [result] = await con.execute(query, [id]); // Voer de delete query uit
+
+    await con.end(); 
+    
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Location not found." });
+    }
+
+    res.json({ message: "Location deleted successfully!" });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong." });
+  }
+});
+
+
+
+
 
 // Start server
 const PORT = process.env.PORT;
