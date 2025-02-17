@@ -1,13 +1,19 @@
-
 const points = [40, 100, 1, 5, 25, 10];
-let arrlength = points.length;
+
+function selectRandomPoint() {
+    console.log("before:");
+    points.forEach(point => console.log(point));
+
+    let temp = Math.floor(Math.random() * points.length);
+    console.log("temp =", temp);
 
 
-function selectRandomPoint(){
-    temp = Math.floor(Math.random() * arrlength);
-    console.log(temp);
-    return points[temp];
+    console.log("Returned point is:", points[temp]);
+
+    points.splice(temp, 1);
+
+    console.log("after:");
+    points.forEach(point => console.log(point));
 }
 
-
-console.log(selectRandomPoint());
+selectRandomPoint();
