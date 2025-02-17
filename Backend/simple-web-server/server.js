@@ -124,7 +124,7 @@ app.post("/scores/create", async (req, res) => {
   }
 });
 
-//UPDATES
+//INSERT USER
 app.post("/user/update", async (req, res) => {
   try {
       const { name, age, email, gsm_number, code, consent } = req.body;
@@ -145,6 +145,7 @@ app.post("/user/update", async (req, res) => {
   }
 });
 
+//UPDATES
 app.post("/location/update", async (req, res)=>{
   try {
     const { number, name} = req.body;
@@ -161,6 +162,8 @@ app.post("/location/update", async (req, res)=>{
     res.json(error);
   }}
 );
+
+//update answer
 app.post("/answer/update/", async (req, res)=>{
   try {
     const { text, correct, question_id} = req.body;
@@ -177,6 +180,8 @@ app.post("/answer/update/", async (req, res)=>{
     res.json(error);
   }}
 );
+
+//update score
 app.post("/score/update/", async (req, res)=>{
   try {
     const { user_id, question_id, correct} = req.body;
@@ -193,6 +198,8 @@ app.post("/score/update/", async (req, res)=>{
     res.json(error);
   }}
 );
+
+//update question
 app.post("/question/update/", async (req, res)=>{
   try {
     const { location_id, text} = req.body;
@@ -209,6 +216,7 @@ app.post("/question/update/", async (req, res)=>{
     res.json(error);
   }}
 );
+
 // DELETE 
 app.delete("/question/delete/:id", async (req, res) => {
   try {
