@@ -43,7 +43,7 @@
             this.QuizTxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.QuizTxt.Location = new System.Drawing.Point(491, 211);
             this.QuizTxt.Name = "QuizTxt";
-            this.QuizTxt.Size = new System.Drawing.Size(527, 50);
+            this.QuizTxt.Size = new System.Drawing.Size(666, 62);
             this.QuizTxt.TabIndex = 2;
             this.QuizTxt.Text = "Vraag1: hoe groot is te groot";
             // 

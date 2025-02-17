@@ -11,18 +11,25 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using System.Drawing.Printing;
 
 
 namespace QuizUI
 {
     public partial class Form1 : Form
     {
+        static HttpClient client;
         public Form1()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
+            client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:8081/api/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,6 +45,20 @@ namespace QuizUI
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Button 1 werkt.");
+            try
+            {
+                List<Question> list = await GetQuestions();
+                foreach (Question question in list)
+                {
+                    questionsLstBx.Items.Add(question.id + " " + question.location_id + " " + question.text);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -33,7 +33,7 @@
       "VerticalTabListWidth": 153,
       "DocumentGroups": [
         {
-          "DockedWidth": 354,
+          "DockedWidth": 597,
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -42,8 +42,8 @@
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\polak\\Documents\\GitHub\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\Form1.cs",
               "RelativeDocumentMoniker": "QuizUI\\Form1.cs",
-              "ToolTip": "C:\\Users\\polak\\Documents\\GitHub\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\Form1.cs [Design]*",
-              "RelativeToolTip": "QuizUI\\Form1.cs [Design]*",
+              "ToolTip": "C:\\Users\\polak\\Documents\\GitHub\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\Form1.cs [Design]",
+              "RelativeToolTip": "QuizUI\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-11T10:22:30.982Z",
               "EditorCaption": " [Design]"
@@ -56,9 +56,10 @@
               "RelativeDocumentMoniker": "QuizUI\\CodeForm.cs",
               "ToolTip": "C:\\Users\\polak\\Documents\\GitHub\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\CodeForm.cs",
               "RelativeToolTip": "QuizUI\\CodeForm.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowBcAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2025-02-11T10:22:30.716Z"
+              "ViewState": "AgIAABsAAAAAAAAAAAAowBcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:22:30.716Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -68,9 +69,10 @@
               "RelativeDocumentMoniker": "QuizUI\\lokaalchooser.cs",
               "ToolTip": "C:\\Users\\polak\\Documents\\GitHub\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\lokaalchooser.cs",
               "RelativeToolTip": "QuizUI\\lokaalchooser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2025-02-11T10:22:30.764Z"
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:22:30.764Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -78,10 +80,11 @@
               "Title": "lokaalchooser.cs [Design]",
               "DocumentMoniker": "C:\\Users\\polak\\Documents\\GitHub\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\lokaalchooser.cs",
               "RelativeDocumentMoniker": "QuizUI\\lokaalchooser.cs",
-              "ToolTip": "C:\\Users\\DenisHristov\\Music\\Opendeur2025\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\lokaalchooser.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\DenisHristov\\Music\\Opendeur2025\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\lokaalchooser.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2025-02-11T10:22:30.765Z"
+              "ToolTip": "C:\\Users\\polak\\Documents\\GitHub\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\lokaalchooser.cs [Design]",
+              "RelativeToolTip": "QuizUI\\lokaalchooser.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:22:30.765Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -91,9 +94,10 @@
               "RelativeDocumentMoniker": "QuizUI\\Program.cs",
               "ToolTip": "C:\\Users\\polak\\Documents\\GitHub\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\Program.cs",
               "RelativeToolTip": "QuizUI\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T10:22:30.766Z"
+              "WhenOpened": "2025-02-11T10:22:30.766Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -101,10 +105,11 @@
               "Title": "CodeForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\polak\\Documents\\GitHub\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\CodeForm.cs",
               "RelativeDocumentMoniker": "QuizUI\\CodeForm.cs",
-              "ToolTip": "C:\\Users\\DenisHristov\\Music\\Opendeur2025\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\CodeForm.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\DenisHristov\\Music\\Opendeur2025\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\CodeForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2025-02-11T10:22:30.767Z"
+              "ToolTip": "C:\\Users\\polak\\Documents\\GitHub\\opendeurspel2025\\Frontend\\QuizUI\\QuizUI\\CodeForm.cs [Design]",
+              "RelativeToolTip": "QuizUI\\CodeForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:22:30.767Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
