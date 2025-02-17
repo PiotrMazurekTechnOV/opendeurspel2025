@@ -17,9 +17,9 @@ async function connect() {
             password: process.env.PASSWORD,
             database: process.env.DB,
         });
-    } catch (err) {
-        console.error("Error connecting to the database:", err.message);
-        throw err;
+    } catch (error) {
+        console.error("Error connecting to the database:", error.message);
+        throw error;
     }
 }
 //CREATE
@@ -40,7 +40,7 @@ app.post("/user/create", async (req, res) => {
       await con.end(); 
       res.status(201).json({ message: "User created successfully!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 //questions
@@ -60,7 +60,7 @@ app.post("/question/create", async (req, res) => {
       await con.end(); 
       res.status(201).json({ message: "Question created successfully!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 //answers
@@ -80,7 +80,7 @@ app.post("/answers/create", async (req, res) => {
       await con.end(); 
       res.status(201).json({ message: "Answer created successfully!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 //locations
@@ -100,7 +100,7 @@ app.post("/locations/create", async (req, res) => {
       await con.end(); 
       res.status(201).json({ message: "Location created successfully!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 //scores
@@ -120,7 +120,7 @@ app.post("/scores/create", async (req, res) => {
       await con.end(); 
       res.status(201).json({ message: "Scores created successfully!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 
@@ -141,7 +141,7 @@ app.post("/user/update", async (req, res) => {
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }
 });
 
@@ -158,11 +158,42 @@ app.post("/location/update", async (req, res)=>{
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }}
 );
+app.post("/answer/update/", async (req, res)=>{
+  try {
+    const { text, correct, question_id} = req.body;
+    if( !correct|| !question_id || !text) {
+      return res.status(400).json({error: "All fields are required."});
+    }
+    const con = await connect(); 
+      const query = `UPDATE answers SET text = ?, correct = ?, Where question_id = ?`;
+      await con.execute(query, [location_id, text]);
 
-app.post("/question/update", async (req, res)=>{
+      await con.end(); 
+      res.status(200).json({ message: "Data updated!" });
+  } catch (error) {
+    res.json(error);
+  }}
+);
+app.post("/score/update/", async (req, res)=>{
+  try {
+    const { user_id, question_id, correct} = req.body;
+    if(!user_id || !question_id || !correct) {
+      return res.status(400).json({error: "All fields are required."});
+    }
+    const con = await connect(); 
+      const query = `UPDATE scores SET user_id = ?, correct = ?, WHERE location_id = ?`;
+      await con.execute(query, [location_id, text]);
+
+      await con.end(); 
+      res.status(200).json({ message: "Data updated!" });
+  } catch (error) {
+    res.json(error);
+  }}
+);
+app.post("/question/update/", async (req, res)=>{
   try {
     const { location_id, text} = req.body;
     if(!location_id || !text) {
@@ -175,13 +206,13 @@ app.post("/question/update", async (req, res)=>{
       await con.end(); 
       res.status(200).json({ message: "Data updated!" });
   } catch (error) {
-    res.json(err);
+    res.json(error);
   }}
 );
 // DELETE 
-app.delete("/question/:id", async (req, res) => {
+app.delete("/question/delete/:id", async (req, res) => {
   try {
-    const { id } = req.params; // Get the question ID from the URL
+    const { id } = req.params; // Get question ID from URL
 
     if (!id) {
       return res.status(400).json({ error: "Please provide a question ID." });
@@ -224,7 +255,7 @@ app.get("/question/read/correct/:id", async (req, res, next) => {
       return res.status(404).json({ error: "Question not found." });
     }
 
-    res.json({ message: "Question read successfully!", data: rows });
+    res.json({ data: rows });
 
   } catch (error) {
     console.error(error);
@@ -280,7 +311,7 @@ app.get("/users/read/:id", async (req, res, next) => {
       return res.status(404).json({ error: "User not found." });
     }
 
-    res.json({ message: "User read successfully!", data: rows });
+    res.json({ data: rows });
 
   } catch (error) {
     console.error(error);
@@ -308,7 +339,7 @@ app.get("/answers/read/:id", async (req, res, next) => {
       return res.status(404).json({ error: "Answer not found." });
     }
 
-    res.json({ message: "Answer read successfully!", data: rows });
+    res.json({ data: rows });
 
   } catch (error) {
     console.error(error);
@@ -336,7 +367,7 @@ app.get("/locations/read/:id", async (req, res, next) => {
       return res.status(404).json({ error: "Location not found." });
     }
 
-    res.json({ message: "Location read successfully!", data: rows });
+    res.json({ data: rows });
 
   } catch (error) {
     console.error(error);
@@ -364,7 +395,7 @@ app.get("/scores/read/:id", async (req, res, next) => {
       return res.status(404).json({ error: " not found." });
     }
 
-    res.json({ message: "User read successfully!", data: rows });
+    res.json({ data: rows });
 
   } catch (error) {
     console.error(error);
