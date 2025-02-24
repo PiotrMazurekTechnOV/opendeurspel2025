@@ -97,6 +97,31 @@ app.post("/question/update", async (req, res)=>{
     res.json(err);
   }}
 );
+
+app.get("/user/code/:code", async (req, res) => {
+  const { code } = req.params;
+ 
+  if (!code) {
+    return res.status(400).json({ error: "Code is required." });
+  }
+  try {
+    const con = await connect();
+ 
+    const [users] = await con.execute("SELECT * FROM users WHERE code = ?", [code]);
+    if (users.length === 0) {
+      await con.end();
+      return res.status(404).json({ error: "User not found." });
+    }
+    await con.end();
+    res.status(201).json({ message: "" });
+ 
+   
+  } catch (error) {
+    res.json(error);
+  }
+});
+
+
 // DELETE 
 app.delete("/question/:id", async (req, res) => {
   try {
