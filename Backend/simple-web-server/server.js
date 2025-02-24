@@ -42,24 +42,6 @@ app.post("/user/create", async (req, res) => {
     res.json(err);
   }
 });
-app.get("/user/code/:code", async (req, res) => {
-  try {
-      const { name, age, email, gsm_number, code, consent } = req.body;
-
-      if (!code) {
-          return res.status(400).json({ error: "All fields are required." });
-      }
-
-      const con = await connect(); 
-      const query = '';
-      await con.execute(query, [name, age, email, gsm_number, code, consent]);
-
-      await con.end(); 
-      res.status(201).json({ message: "User created successfully!" });
-  } catch (error) {
-    res.json(error);
-  }
-});
 
 //UPDATES
 app.post("/user/update", async (req, res) => {
