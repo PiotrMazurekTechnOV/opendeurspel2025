@@ -40,7 +40,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelwelklok.AutoSize = true;
             this.labelwelklok.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelwelklok.Location = new System.Drawing.Point(155, 20);
+            this.labelwelklok.Location = new System.Drawing.Point(152, 46);
             this.labelwelklok.Margin = new System.Windows.Forms.Padding(0);
             this.labelwelklok.Name = "labelwelklok";
             this.labelwelklok.Size = new System.Drawing.Size(168, 25);
@@ -50,7 +50,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(179, 68);
+            this.textBox1.Location = new System.Drawing.Point(176, 94);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(113, 20);
             this.textBox1.TabIndex = 1;
@@ -59,7 +59,7 @@
             // EnterBtn
             // 
             this.EnterBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnterBtn.Location = new System.Drawing.Point(170, 107);
+            this.EnterBtn.Location = new System.Drawing.Point(167, 133);
             this.EnterBtn.Name = "EnterBtn";
             this.EnterBtn.Size = new System.Drawing.Size(130, 29);
             this.EnterBtn.TabIndex = 2;
@@ -72,7 +72,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Sienna;
-            this.ClientSize = new System.Drawing.Size(484, 211);
+            this.ClientSize = new System.Drawing.Size(484, 230);
             this.Controls.Add(this.EnterBtn);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelwelklok);
