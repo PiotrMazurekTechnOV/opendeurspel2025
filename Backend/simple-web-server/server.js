@@ -129,7 +129,7 @@ app.post("/question/update/", async (req, res)=>{
   }}
 );
 // DELETE 
-app.delete("/question/delete/:id", async (req, res) => {
+app.get("/question/delete/:id", async (req, res) => {
   try {
     const { id } = req.params; // Get question ID from URL
 
