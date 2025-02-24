@@ -109,30 +109,30 @@ namespace QuizUI
 
         private async void apitestBtn_Click(object sender, EventArgs e)
         {
-            var response = await AddUser("test", "test2", 20, true, "testtest", "test@test.com");
+            var response = await AddUser("testname", 21, 99, "testmail@mail.com", "1", 0432817232);
 
             MessageBox.Show(response);
 
 
         }
 
-        static async Task<string> AddUser(string firstNameN, string lastNameN, int ageN, bool consentN, string interestN, string emailN)
+        static async Task<string> AddUser(string NameN, int ageN, int codeN, string emailN, string consentN, int gsm_numberN)
         {
             User user = new User
             {
-                firstName = firstNameN,
-                lastName = lastNameN,
+                name = NameN,
                 age = ageN,
+                code = codeN,
                 consent = consentN,
-                interest = interestN,
-                email = emailN
+                email = emailN,
+                gsm_number = gsm_numberN
             };
 
             StringContent json = new StringContent(JsonConvert.SerializeObject(user, Formatting.Indented), Encoding.UTF8,
         "application/json");
 
             var response = await client.PostAsync(
-                "user/add",
+                "user/create",
                 json);
 
             response.EnsureSuccessStatusCode();
@@ -146,12 +146,12 @@ namespace QuizUI
         public class User
         {
             public int id { get; set; }
-            public string firstName { get; set; }
-            public string lastName { get; set; }
+            public string name { get; set; }
             public int age { get; set; }
-            public bool consent { get; set; }
             public string email { get; set; }
-            public string interest { get; set; }
+            public int gsm_number { get; set; }
+            public int code { get; set; }
+            public string consent { get; set; }
 
         }
 

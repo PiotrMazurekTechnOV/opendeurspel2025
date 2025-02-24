@@ -10,3 +10,6 @@ C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI
 C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\obj\Debug\QuizUI.pdb
 C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\obj\Debug\QuizUI.CodeForm.resources
 C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\obj\Debug\QuizUI.lokaalchooser.resources
+C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\DenisHristov\Music\Opendeur2025\opendeurspel2025\Frontend\QuizUI\QuizUI\obj\Debug\QuizUI.csproj.CopyComplete
