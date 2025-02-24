@@ -55,8 +55,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.Number_txtbox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.Question_txtbox = new System.Windows.Forms.TextBox();
             this.ConsenctCheckBx = new System.Windows.Forms.CheckBox();
+            this.Question_txtbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // comboBox_Lokalen
@@ -92,6 +92,7 @@
             this.Antwd4_txtbox.Name = "Antwd4_txtbox";
             this.Antwd4_txtbox.Size = new System.Drawing.Size(177, 26);
             this.Antwd4_txtbox.TabIndex = 5;
+            this.Antwd4_txtbox.TextChanged += new System.EventHandler(this.Antwd4_txtbox_TextChanged);
             // 
             // Antwd3_txtbox
             // 
@@ -99,6 +100,7 @@
             this.Antwd3_txtbox.Name = "Antwd3_txtbox";
             this.Antwd3_txtbox.Size = new System.Drawing.Size(177, 26);
             this.Antwd3_txtbox.TabIndex = 6;
+            this.Antwd3_txtbox.TextChanged += new System.EventHandler(this.Antwd3_txtbox_TextChanged);
             // 
             // Antwd2_txtbox
             // 
@@ -106,6 +108,7 @@
             this.Antwd2_txtbox.Name = "Antwd2_txtbox";
             this.Antwd2_txtbox.Size = new System.Drawing.Size(177, 26);
             this.Antwd2_txtbox.TabIndex = 7;
+            this.Antwd2_txtbox.TextChanged += new System.EventHandler(this.Antwd2_txtbox_TextChanged);
             // 
             // Antwd1_txtbox
             // 
@@ -113,6 +116,7 @@
             this.Antwd1_txtbox.Name = "Antwd1_txtbox";
             this.Antwd1_txtbox.Size = new System.Drawing.Size(177, 26);
             this.Antwd1_txtbox.TabIndex = 8;
+            this.Antwd1_txtbox.TextChanged += new System.EventHandler(this.Antwd1_txtbox_TextChanged);
             // 
             // ConfirmbtnCR
             // 
@@ -294,14 +298,6 @@
             this.label10.TabIndex = 27;
             this.label10.Text = "Phone number";
             // 
-            // Question_txtbox
-            // 
-            this.Question_txtbox.Location = new System.Drawing.Point(235, 33);
-            this.Question_txtbox.Name = "Question_txtbox";
-            this.Question_txtbox.Size = new System.Drawing.Size(177, 26);
-            this.Question_txtbox.TabIndex = 29;
-            this.Question_txtbox.TextChanged += new System.EventHandler(this.Question_txtbox_TextChanged);
-            // 
             // ConsenctCheckBx
             // 
             this.ConsenctCheckBx.AutoSize = true;
@@ -311,6 +307,14 @@
             this.ConsenctCheckBx.TabIndex = 30;
             this.ConsenctCheckBx.Text = "Consent";
             this.ConsenctCheckBx.UseVisualStyleBackColor = true;
+            // 
+            // Question_txtbox
+            // 
+            this.Question_txtbox.Location = new System.Drawing.Point(235, 33);
+            this.Question_txtbox.Name = "Question_txtbox";
+            this.Question_txtbox.Size = new System.Drawing.Size(177, 26);
+            this.Question_txtbox.TabIndex = 29;
+            this.Question_txtbox.TextChanged += new System.EventHandler(this.Question_txtbox_TextChanged);
             // 
             // Form1
             // 
@@ -383,8 +387,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox Number_txtbox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox Question_txtbox;
         private System.Windows.Forms.CheckBox ConsenctCheckBx;
+        private System.Windows.Forms.TextBox Question_txtbox;
     }
 }
 

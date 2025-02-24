@@ -119,7 +119,7 @@ namespace AdminPanel
 
         private void Question_txtbox_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void comboBox_Player_SelectedIndexChanged(object sender, EventArgs e)
@@ -253,9 +253,44 @@ namespace AdminPanel
 
         }
 
-
-        public class User
+        private void Antwd1_txtbox_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void Antwd2_txtbox_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void Antwd3_txtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Antwd4_txtbox_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+    }
+
+
+
+  
+
+   
+}   
+
+
+
+
+
+
+
+
+public class User
+    {
             public int code { get; set; }
             public string name { get; set; }
             public int age { get; set; }
@@ -263,10 +298,38 @@ namespace AdminPanel
             public string email { get; set; }
             public int gsm_number { get; set; }
 
-        }
-
-
-
-
     }
+
+
+public class Question
+{
+    public int id { get; set; }
+    public string text { get; set; }
+
+    public int location_id { get; set; }
+
 }
+public class Answer
+{
+    public int id { get; set; }
+    public string text { get; set; }
+
+    public int question_id { get; set; }
+    public bool correct { get; set; }
+
+}
+
+public class Location
+{
+    public int id { get; set; }
+    public string name { get; set; }
+
+    public string room { get; set; }
+
+}
+
+
+
+
+
+
