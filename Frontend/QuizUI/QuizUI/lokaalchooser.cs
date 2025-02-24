@@ -19,6 +19,7 @@ namespace QuizUI
 
         private void EnterBtn_Click(object sender, EventArgs e)
         {
+
             if(string.IsNullOrEmpty(textBox1.Text))
             {
                 MessageBox.Show("Vul een klas is");
@@ -28,6 +29,7 @@ namespace QuizUI
             CodeForm codeform = new CodeForm();
             codeform.Show();
             this.Hide();
+
 
 
         }
