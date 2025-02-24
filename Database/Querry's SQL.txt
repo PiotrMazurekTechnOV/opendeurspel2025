@@ -4,19 +4,30 @@
 INSERT INTO questions (id, location_id, text) VALUES (?, ?, ?);
  
 -- Select questions informations
-SELECT * FROM questions WHERE code = ?;
+SELECT * FROM questions WHERE questions_id = ?;
  
 -- Update questions informations
 UPDATE questions SET id = ?, location_id = ?, text = ?;
  
 -- Delete questions informations
-DELETE FROM questions WHERE id = ? AND location_id = ? AND text = ?;
+DELETE FROM questions WHERE id = ?;
+
+-- Get question based on location number
+SELECT FROM questions.id, questions.location_id, questions.text
+FROM questions
+JOIN locations ON questions.location_id = location.id
+WHERE locations.number = ?;
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
--- answers
- 
+-- Get all answers based on question id        //Correct way
+
+SELECT *       
+FROM opendeurspel2025.answers
+WHERE answers.question_id = ?;
+
+
 -- Create answers informations
 INSERT INTO answers (id, text, correct, question_id) VALUES (?, ?, ?, ?);
  
