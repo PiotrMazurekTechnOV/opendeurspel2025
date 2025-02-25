@@ -59,7 +59,6 @@ app.get("/user/code/:code", async (req, res) => {
     }
     await con.end();
     res.status(201).json({ message: "USER FOUND" });
-
    
   } catch (error) {
     res.json(error);
