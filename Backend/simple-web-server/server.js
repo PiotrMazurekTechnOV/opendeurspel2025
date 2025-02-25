@@ -18,11 +18,7 @@ async function connect() {
             database: process.env.DB,
         });
     } catch (error) {
-<<<<<<< HEAD
         console.error("Error connecting to the database:", error.message);
-=======
-        console.error("Error connecting to the database:", err.message);
->>>>>>> Michee
         throw error;
     }
 }
@@ -61,7 +57,6 @@ app.post("/user/create", async (req, res) => {
       res.status(201).json({ message: "User created successfully!" });
   } catch (error) {
     res.json(error);
-<<<<<<< HEAD
   }
 });
 //questions
@@ -142,8 +137,6 @@ app.post("/scores/create", async (req, res) => {
       res.status(201).json({ message: "Scores created successfully!" });
   } catch (error) {
     res.json(error);
-=======
->>>>>>> Michee
   }
 });
 // user find on basis of code
