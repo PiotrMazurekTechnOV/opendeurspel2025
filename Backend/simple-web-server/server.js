@@ -19,6 +19,7 @@ async function connect() {
         });
     } catch (error) {
         console.error("Error connecting to the database:", error.message);
+        console.error("Error connecting to the database:", err.message);
         throw error;
     }
 }
@@ -139,6 +140,29 @@ app.post("/scores/create", async (req, res) => {
     res.json(error);
   }
 });
+// user find on basis of code
+app.get("/user/code/:code", async (req, res) => {
+  const { code } = req.params;
+
+  if (!code) {
+    return res.status(400).json({ error: "Code is required." });
+  }
+  try {
+    const con = await connect();
+
+    const [users] = await con.execute("SELECT * FROM users WHERE code = ?", [code]);
+    if (users.length === 0) {
+      await con.end();
+      return res.status(404).json({ error: "User not found." });
+    }
+    await con.end();
+    res.status(201).json({ message: "USER FOUND" });
+   
+  } catch (error) {
+    res.json(error);
+  }
+});
+
 
 //INSERT USER
 app.post("/user/update", async (req, res) => {
