@@ -21,7 +21,7 @@ WHERE locations.number = ?;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
--- Get all answers based on question id        //Correct way
+-- Get all answers based on question id        
 
 SELECT *       
 FROM opendeurspel2025.answers
@@ -45,6 +45,8 @@ DELETE FROM answers WHERE id = ? AND text = ? AND correct = ? AND question_id = 
 
 
 -- locations
+
+
 
 -- Create locations informations
 INSERT INTO answers (id, number, name) VALUES (?, ?, ?)
