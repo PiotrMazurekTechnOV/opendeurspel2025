@@ -19,9 +19,12 @@ JOIN locations ON questions.location_id = location.id
 WHERE locations.number = ?;
 
 
-------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
--- Get all answers based on question id        //Correct way
+-- answers
+
+-- Get all answers based on question id       
+
 
 SELECT *       
 FROM opendeurspel2025.answers
