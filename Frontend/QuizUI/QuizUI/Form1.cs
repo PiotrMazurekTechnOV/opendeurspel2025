@@ -24,7 +24,7 @@ namespace QuizUI
         public Form1()
         {
 
-            
+
 
             InitializeComponent();
 
@@ -46,16 +46,16 @@ namespace QuizUI
 
         private void button1_MouseHover(object sender, EventArgs e)
         {
-           
+
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            
-            
-            
-            
-            
+
+
+
+
+
             MessageBox.Show("Button 1 werkt.");
         }
 
@@ -91,7 +91,7 @@ namespace QuizUI
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_MouseLeave(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace QuizUI
 
         private async void apitestBtn_Click(object sender, EventArgs e)
         {
-          
+
 
 
         }
@@ -152,7 +152,6 @@ namespace QuizUI
                     return;
                 }
 
-                ShuffleAnswers(currentAnswers);
 
                 button1.Text = currentAnswers[0].text;
                 button2.Text = currentAnswers[1].text;
@@ -165,23 +164,9 @@ namespace QuizUI
             }
         }
 
-        private void CheckAnswer(int index)
-        {
-            if (currentAnswers.Count == 0) return;
-
-            if (currentAnswers[index].correct)
-                MessageBox.Show("Correct antwoord! 🎉");
-            else
-                MessageBox.Show("Fout antwoord! ❌");
-
-            _ = LoadNewQuestion();
-        }
 
 
-        private void btnAnswer1_Click(object sender, EventArgs e) => CheckAnswer(0);
-        private void btnAnswer2_Click(object sender, EventArgs e) => CheckAnswer(1);
-        private void btnAnswer3_Click(object sender, EventArgs e) => CheckAnswer(2);
-        private void btnAnswer4_Click(object sender, EventArgs e) => CheckAnswer(3);
+
 
         private static async Task<List<Question>> GetQuestions()
         {
@@ -199,31 +184,21 @@ namespace QuizUI
             return JsonConvert.DeserializeObject<List<Answer>>(jsonResponse) ?? new List<Answer>();
         }
 
-        private static void ShuffleAnswers(List<Answer> answers)
+
+
+        public class Question
         {
-            Random rng = new Random();
-            int n = answers.Count;
-            while (n > 1)
-            {
-                n--;
-                int k = rng.Next(n + 1);
-                (answers[n], answers[k]) = (answers[k], answers[n]);
-            }
+            public int id { get; set; }
+            public string text { get; set; }
         }
-    }
 
-    public class Question
-    {
-        public int id { get; set; }
-        public string text { get; set; }
-    }
-
-    public class Answer
-    {
-        public int id { get; set; }
-        public string text { get; set; }
-        public int question_id { get; set; }
-        public bool correct { get; set; }
+        public class Answer
+        {
+            public int id { get; set; }
+            public string text { get; set; }
+            public int question_id { get; set; }
+            public bool correct { get; set; }
+        }
     }
 }
     
