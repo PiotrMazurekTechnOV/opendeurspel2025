@@ -51,11 +51,6 @@ namespace QuizUI
 
         private async void button1_Click(object sender, EventArgs e)
         {
-
-
-
-
-
             MessageBox.Show("Button 1 werkt.");
         }
 
@@ -170,7 +165,7 @@ namespace QuizUI
 
         private static async Task<List<Question>> GetQuestions()
         {
-            HttpResponseMessage response = await client.GetAsync("questions");
+            HttpResponseMessage response = await client.GetAsync("question/read/:id");
             response.EnsureSuccessStatusCode();
             string jsonResponse = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<List<Question>>(jsonResponse) ?? new List<Question>();
@@ -178,7 +173,7 @@ namespace QuizUI
 
         private static async Task<List<Answer>> GetAnswersForQuestion(int questionId)
         {
-            HttpResponseMessage response = await client.GetAsync($"answers/{questionId}");
+            HttpResponseMessage response = await client.GetAsync($"question/read/correct/:id");
             response.EnsureSuccessStatusCode();
             string jsonResponse = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<List<Answer>>(jsonResponse) ?? new List<Answer>();
