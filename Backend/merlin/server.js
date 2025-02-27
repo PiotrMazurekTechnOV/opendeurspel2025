@@ -133,7 +133,7 @@ app.get("/question/read/:id",(req,res,next)=>{
         }
     
         const con = connect(); 
-        const query = "SELECT * FROM questions WHERE id = ?"; 
+        const query = "SELECT * FROM questions WHERE location_id = ?"; 
         const [result] = con.execute(query, [id]); // Run read query
     
         con.end(); 
@@ -154,7 +154,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 app.get("/", (req, res) => {
-  res.send("WELKOM!!!");
+  res.send("FORTNITEBATTLEPASS!!!!");
 });
 
 // Close the database connection

@@ -30,7 +30,7 @@ namespace QuizUI
             client.BaseAddress = new Uri("http://localhost:8081/api/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
+            new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -139,13 +139,7 @@ namespace QuizUI
 
 
 
-        public class Question
-        {
-            public int id { get; set; }
-            public string text { get; set; }
-
-            public int location_id { get; set; }
-        }
+        
 
         public class Answer
         {
@@ -173,6 +167,11 @@ namespace QuizUI
             public int gsm_number { get; set; }
             public int code { get; set; }
             public bool consent { get; set; }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

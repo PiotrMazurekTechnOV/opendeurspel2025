@@ -282,7 +282,7 @@ app.get("/question/read/:id", async (req, res, next) => {
     }
 
     const con = await connect(); 
-    const query = "SELECT * FROM questions WHERE id = ?";
+    const query = "SELECT * FROM questions WHERE location_id = ?";
     
     const [rows] = await con.execute(query, [id]);
     console.log(rows)
