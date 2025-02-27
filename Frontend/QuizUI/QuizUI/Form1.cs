@@ -19,6 +19,8 @@ namespace QuizUI
     {
 
         static HttpClient client;
+        private Question currentQuestion;
+        private List<Answer> currentAnswers = new List<Answer>();
         public Form1()
         {
 
@@ -37,9 +39,9 @@ namespace QuizUI
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-
+            await LoadNewQuestion();
         }
 
         private void button1_MouseHover(object sender, EventArgs e)
@@ -109,51 +111,120 @@ namespace QuizUI
 
         private async void apitestBtn_Click(object sender, EventArgs e)
         {
-            var response = await AddUser("testname", 21, 99, "testmail@mail.com", "1", 0432817232);
-
-            MessageBox.Show(response);
+          
 
 
         }
 
-        static async Task<string> AddUser(string NameN, int ageN, int codeN, string emailN, string consentN, int gsm_numberN)
+
+        private async Task LoadNewQuestion()
         {
-            User user = new User
+            try
             {
-                name = NameN,
-                age = ageN,
-                code = codeN,
-                consent = consentN,
-                email = emailN,
-                gsm_number = gsm_numberN
-            };
+                List<Question> questions = await GetQuestions();
+                if (questions.Count == 0)
+                {
+                    MessageBox.Show("Geen vragen beschikbaar.");
+                    return;
+                }
 
-            StringContent json = new StringContent(JsonConvert.SerializeObject(user, Formatting.Indented), Encoding.UTF8,
-        "application/json");
+                Random rnd = new Random();
+                currentQuestion = questions[rnd.Next(questions.Count)];
 
-            var response = await client.PostAsync(
-                "user/create",
-                json);
-
-            response.EnsureSuccessStatusCode();
-
-            var jsonResponse = await response.Content.ReadAsStringAsync();
-
-            return jsonResponse;
+                QuizTxt.Text = currentQuestion.text;
+                await LoadAnswers(currentQuestion.id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fout bij laden van de vraag: " + ex.Message);
+            }
         }
 
 
-        public class User
+        private async Task LoadAnswers(int questionId)
         {
-            public int id { get; set; }
-            public string name { get; set; }
-            public int age { get; set; }
-            public string email { get; set; }
-            public int gsm_number { get; set; }
-            public int code { get; set; }
-            public string consent { get; set; }
+            try
+            {
+                currentAnswers = await GetAnswersForQuestion(questionId);
+                if (currentAnswers.Count < 4)
+                {
+                    MessageBox.Show("Niet genoeg antwoorden beschikbaar.");
+                    return;
+                }
 
+                ShuffleAnswers(currentAnswers);
+
+                button1.Text = currentAnswers[0].text;
+                button2.Text = currentAnswers[1].text;
+                button3.Text = currentAnswers[2].text;
+                button3.Text = currentAnswers[3].text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fout bij laden van antwoorden: " + ex.Message);
+            }
         }
 
+        private void CheckAnswer(int index)
+        {
+            if (currentAnswers.Count == 0) return;
+
+            if (currentAnswers[index].correct)
+                MessageBox.Show("Correct antwoord! 🎉");
+            else
+                MessageBox.Show("Fout antwoord! ❌");
+
+            _ = LoadNewQuestion();
+        }
+
+
+        private void btnAnswer1_Click(object sender, EventArgs e) => CheckAnswer(0);
+        private void btnAnswer2_Click(object sender, EventArgs e) => CheckAnswer(1);
+        private void btnAnswer3_Click(object sender, EventArgs e) => CheckAnswer(2);
+        private void btnAnswer4_Click(object sender, EventArgs e) => CheckAnswer(3);
+
+        private static async Task<List<Question>> GetQuestions()
+        {
+            HttpResponseMessage response = await client.GetAsync("questions");
+            response.EnsureSuccessStatusCode();
+            string jsonResponse = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<List<Question>>(jsonResponse) ?? new List<Question>();
+        }
+
+        private static async Task<List<Answer>> GetAnswersForQuestion(int questionId)
+        {
+            HttpResponseMessage response = await client.GetAsync($"answers/{questionId}");
+            response.EnsureSuccessStatusCode();
+            string jsonResponse = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<List<Answer>>(jsonResponse) ?? new List<Answer>();
+        }
+
+        private static void ShuffleAnswers(List<Answer> answers)
+        {
+            Random rng = new Random();
+            int n = answers.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                (answers[n], answers[k]) = (answers[k], answers[n]);
+            }
+        }
+    }
+
+    public class Question
+    {
+        public int id { get; set; }
+        public string text { get; set; }
+    }
+
+    public class Answer
+    {
+        public int id { get; set; }
+        public string text { get; set; }
+        public int question_id { get; set; }
+        public bool correct { get; set; }
     }
 }
+    
+
