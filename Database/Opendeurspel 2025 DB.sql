@@ -1,9 +1,6 @@
-<<<<<<< Updated upstream:Database/Opendeurspel 2025 DB.sql
+
+
 -- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
-=======
-<<<<<<< Updated upstream
--- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
->>>>>>> Stashed changes:Database/SQL Database.sql
 --
 -- Host: 127.0.0.1    Database: opendeurspel2025
 -- ------------------------------------------------------
@@ -172,11 +169,8 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-<<<<<<< Updated upstream:Database/Opendeurspel 2025 DB.sql
 -- Dump completed on 2025-02-11 10:41:04
-=======
--- Dump completed on 2025-01-28 10:43:34
-=======
+
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: opendeuravond2025
@@ -347,5 +341,3 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2025-01-28 10:43:34
->>>>>>> Stashed changes
->>>>>>> Stashed changes:Database/SQL Database.sql
