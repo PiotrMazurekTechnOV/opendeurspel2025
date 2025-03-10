@@ -50,16 +50,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Component1.cs" />
+    <Compile Include="Component1.Designer.cs">
+      <DependentUpon>Component1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inschriving_paneel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Inschriving_paneel.Designer.cs">
+      <DependentUpon>Inschriving_paneel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Verwelkom_paneel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Verwelkom_paneel.Designer.cs">
+      <DependentUpon>Verwelkom_paneel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Inschriving_paneel.resx">
+      <DependentUpon>Inschriving_paneel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Verwelkom_paneel.resx">
+      <DependentUpon>Verwelkom_paneel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
