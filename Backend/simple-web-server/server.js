@@ -35,6 +35,9 @@ app.post("/user/create", async (req, res) => {
       let temp = Math.floor(Math.random());
       console.log("temp =", temp);
 
+      const con = await connect(); 
+
+
       const querys = "select opendeurspel2025.code FROM opendeurspel2025.users;"; 
       const [codelist] = await con.execute(querys); // Voer de query uit
       let codeFound = false;
@@ -46,7 +49,6 @@ app.post("/user/create", async (req, res) => {
         }
       }''
       
-      const con = await connect(); 
       const query = `INSERT INTO users (name, age, email, gsm_number, code, consent) VALUES 
       (?, ?, ?, ?, ?, ?)`;
       
@@ -54,7 +56,7 @@ app.post("/user/create", async (req, res) => {
       await con.execute(query, [name, age, email, gsm_number, code=temp, consent]);
 
       await con.end(); 
-      res.status(201).json({ message: "User created successfully!" });
+      rest.status(201).json(temp);
   } catch (error) {
     res.json(error);
   }
