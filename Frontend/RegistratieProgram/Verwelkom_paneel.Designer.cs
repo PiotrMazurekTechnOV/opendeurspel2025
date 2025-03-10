@@ -28,31 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Verwelkom_paneel));
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-<<<<<<< Updated upstream
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(505, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1120, 782);
+            this.label1.TabIndex = 0;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
             // Verwelkom_paneel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::RegistratieProgram.Properties.Resources.registratietechnov;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.label1);
             this.Name = "Verwelkom_paneel";
             this.Text = "Form2";
             this.ResumeLayout(false);
-=======
-            // Form2
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 462);
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.ResumeLayout(false);
             this.PerformLayout();
->>>>>>> Stashed changes
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -117,4 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Welkom bij de TechnoV-Quiz!
+
+Wandel door heel de school en bekijk elke vaklokaal,
+beleef wat de leerlingen van Technov elke dag meemaken!
+
+Bij elke lokaal zal je één Scherm zien staan en 
+er zal een vraag gesteld worden. Als je deze kan beantwoorden
+krijg je een punt.
+
+Tip: bij elke lokaal kan je het antwoord afleiden.
+
+Voordat je die vraag krijgt zal het scherm een code opvragen,
+Deze code zal jouw profiel voorstellen, dus je moet die niet vergeten!
+
+Die zal je krijgen wanneer je bent incheschreven.
+Zou er toch iets mislopen, kan je bij de ICT-lokaal terechtkomen,
+we zullen jou graag verder helpen!
+</value>
+  </data>
 </root>
