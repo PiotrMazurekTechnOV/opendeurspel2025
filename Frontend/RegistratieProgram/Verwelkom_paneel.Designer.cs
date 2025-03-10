@@ -30,6 +30,7 @@
         {
             this.SuspendLayout();
             // 
+<<<<<<< Updated upstream
             // Verwelkom_paneel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -38,6 +39,17 @@
             this.Name = "Verwelkom_paneel";
             this.Text = "Form2";
             this.ResumeLayout(false);
+=======
+            // Form2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(824, 462);
+            this.Name = "Form2";
+            this.Text = "Form2";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+>>>>>>> Stashed changes
 
         }
 

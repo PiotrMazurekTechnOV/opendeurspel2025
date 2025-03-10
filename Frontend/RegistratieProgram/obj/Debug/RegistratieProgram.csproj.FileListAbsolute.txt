@@ -11,12 +11,13 @@ C:\Users\JonHysenaj\OneDrive - Katholiek Onderwijs Vilvoorde Machelen Diegem vzw
 C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\bin\Debug\RegistratieProgram.exe.config
 C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\bin\Debug\RegistratieProgram.exe
 C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\bin\Debug\RegistratieProgram.pdb
+C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\bin\Debug\MaterialSkin.dll
 C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.csproj.AssemblyReference.cache
 C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.Form.resources
 C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.Properties.Resources.resources
 C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.csproj.GenerateResource.cache
 C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.csproj.CoreCompileInputs.cache
+C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.csproj.CopyComplete
 C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.exe
 C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.pdb
-C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\bin\Debug\MaterialSkin.dll
-C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.csproj.CopyComplete
+C:\Users\JonHysenaj\Opendeurspelleke2025\Frontend\RegistratieProgram\obj\Debug\RegistratieProgram.Verwelkom_paneel.resources
