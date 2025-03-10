@@ -51,12 +51,12 @@ namespace QuizUI
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Button 1 werkt.");
+            CheckAnswer(button1.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Button 2 werkt.");
+            CheckAnswer(button2.Text);
         }
 
         private void button2_MouseHover(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace QuizUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Button 3 werkt.");
+            CheckAnswer(button3.Text);
         }
 
         private void button3_MouseHover(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace QuizUI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Button 4 werkt.");
+            CheckAnswer(button4.Text);
         }
 
         private void button4_MouseHover(object sender, EventArgs e)
@@ -160,26 +160,38 @@ namespace QuizUI
         }
 
 
+        private void CheckAnswer(string selectedAnswer)
+        {
+            var correctAnswer = currentAnswers.FirstOrDefault(a => a.correct);
+            if (correctAnswer != null && correctAnswer.text == selectedAnswer)
+            {
+                MessageBox.Show("Correct!");
+            }
+            else
+            {
+                MessageBox.Show("Incorrect!");
+            }
+        }
 
 
 
         private static async Task<List<Question>> GetQuestions()
         {
-            HttpResponseMessage response = await client.GetAsync("question/read/:id");
+            HttpResponseMessage response = await client.GetAsync("question/read/1"); // Replace with actual ID or logic to get questions
             response.EnsureSuccessStatusCode();
             string jsonResponse = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<List<Question>>(jsonResponse) ?? new List<Question>();
+            var result = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
+            return result.data.ToObject<List<Question>>() ?? new List<Question>();
         }
 
         private static async Task<List<Answer>> GetAnswersForQuestion(int questionId)
         {
-            HttpResponseMessage response = await client.GetAsync($"question/read/correct/:id");
+            HttpResponseMessage response = await client.GetAsync($"answers/read/{questionId}");
             response.EnsureSuccessStatusCode();
             string jsonResponse = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<List<Answer>>(jsonResponse) ?? new List<Answer>();
+            var result = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
+            return result.data.ToObject<List<Answer>>() ?? new List<Answer>();
         }
-
-
 
         public class Question
         {
@@ -195,6 +207,8 @@ namespace QuizUI
             public bool correct { get; set; }
         }
     }
-}
+
+    }
+
     
 
