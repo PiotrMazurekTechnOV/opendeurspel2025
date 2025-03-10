@@ -29,7 +29,7 @@ namespace QuizUI
             InitializeComponent();
 
             client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:8081/api/");
+            client.BaseAddress = new Uri("http://localhost:8081");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("application/json"));
@@ -177,8 +177,7 @@ namespace QuizUI
 
         private static async Task<List<Question>> GetQuestions()
         {
-            HttpResponseMessage response = await client.GetAsync("question/read/1"); // Replace with actual ID or logic to get questions
-            response.EnsureSuccessStatusCode();
+            HttpResponseMessage response = await client.GetAsync("question/read"); 
             string jsonResponse = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
             return result.data.ToObject<List<Question>>() ?? new List<Question>();
@@ -186,7 +185,7 @@ namespace QuizUI
 
         private static async Task<List<Answer>> GetAnswersForQuestion(int questionId)
         {
-            HttpResponseMessage response = await client.GetAsync($"answers/read/{questionId}");
+            HttpResponseMessage response = await client.GetAsync($"answers/read/correct/:{questionId}");
             response.EnsureSuccessStatusCode();
             string jsonResponse = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
