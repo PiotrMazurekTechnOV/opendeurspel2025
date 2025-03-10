@@ -18,7 +18,11 @@ async function connect() {
             database: process.env.DB,
         });
     } catch (error) {
+<<<<<<< HEAD
         console.error("Error connecting to the database:", error.message);
+=======
+        console.error("Error connecting to the database:", err.message);
+>>>>>>> Michee
         throw error;
     }
 }
@@ -59,6 +63,7 @@ app.post("/user/create", async (req, res) => {
       rest.status(201).json(temp);
   } catch (error) {
     res.json(error);
+<<<<<<< HEAD
   }
 });
 //questions
@@ -139,8 +144,33 @@ app.post("/scores/create", async (req, res) => {
       res.status(201).json({ message: "Scores created successfully!" });
   } catch (error) {
     res.json(error);
+=======
+>>>>>>> Michee
   }
 });
+// user find on basis of code
+app.get("/user/code/:code", async (req, res) => {
+  const { code } = req.params;
+
+  if (!code) {
+    return res.status(400).json({ error: "Code is required." });
+  }
+  try {
+    const con = await connect();
+
+    const [users] = await con.execute("SELECT * FROM users WHERE code = ?", [code]);
+    if (users.length === 0) {
+      await con.end();
+      return res.status(404).json({ error: "User not found." });
+    }
+    await con.end();
+    res.status(201).json({ message: "USER FOUND" });
+   
+  } catch (error) {
+    res.json(error);
+  }
+});
+
 
 //INSERT USER
 app.post("/user/update", async (req, res) => {
