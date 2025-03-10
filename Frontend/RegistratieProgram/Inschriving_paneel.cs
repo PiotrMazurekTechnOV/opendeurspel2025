@@ -22,9 +22,6 @@ namespace RegistratieProgram
 
         private void Form_Load(object sender, EventArgs e)
         {
-<<<<<<< Updated upstream:Frontend/RegistratieProgram/Form1.cs
-            voornaam_label.Location = new Point(Form, 140);
-=======
 
             voornaam_label.Location = new Point(630, 135);
             achternaam_label.Location = new Point(630, 220);
@@ -39,7 +36,6 @@ namespace RegistratieProgram
             email_textbox.Location = new Point(850, 390);
             gsm_textbox.Location = new Point(850, 475);
             registratie_btn.Location = new Point(1000, 655);
->>>>>>> Stashed changes:Frontend/RegistratieProgram/Inschriving_paneel.cs
         }
 
         private void registratie_btn_Click(object sender, EventArgs e)
