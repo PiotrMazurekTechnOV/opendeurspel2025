@@ -1,0 +1,39 @@
+-- Users
+
+-- Create user informations
+INSERT INTO opendeurspel2025.users (name, age, email, gsm_number, consent) VALUES (?, ?, ?, ?, ?);
+
+-- Select user informations
+SELECT * FROM opendeurspel2025.users WHERE code = ?;
+
+-- Update user informations
+UPDATE opendeurspel2025.users SET name = ?, age = ?, email = ?, gsm_number = ?, consent = ? WHERE code = ?;
+
+-- Delete user informations
+DELETE FROM opendeurspel2025.users WHERE name = ? AND age = ? AND email = ? AND gsm_number = ? AND consent = ? WHERE code = ?;
+
+---------------------------------------------------------------------------------------------------------------------------
+
+-- SCORES
+
+-- Create scores informations
+INSERT INTO opendeurspel2025.scores (user_id, question_id, correct) VALUES (?,?,?);
+
+-- Select scores informations
+SELECT * FROM opendeurspel2025.scores WHERE user_id = ?;
+
+-- Update scores informations
+UPDATE opendeurspel2025.scores SET correct = ?;
+
+-- Delete scores informations
+DELETE FROM opendeurspel2025.scores WHERE correct = ?;
+
+-- Find score based on the USER unique code
+SELECT opendeurspel2025.users.code
+FROM opendeurspel2025.users
+INNER JOIN opendeurspel2025.scores ON opendeurspel2025.scores.user_id = opendeurspel2025.users.id
+WHERE code = ?;
+
+-- Totale score van een gebruiker teruggeven
+
+
