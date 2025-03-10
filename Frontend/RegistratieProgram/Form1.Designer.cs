@@ -65,51 +65,47 @@
             this.voornaam_textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.voornaam_textbox.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.voornaam_textbox.ForeColor = System.Drawing.Color.Black;
-            this.voornaam_textbox.Location = new System.Drawing.Point(1158, 164);
+            this.voornaam_textbox.Location = new System.Drawing.Point(1158, 165);
             this.voornaam_textbox.Name = "voornaam_textbox";
             this.voornaam_textbox.Size = new System.Drawing.Size(372, 44);
             this.voornaam_textbox.TabIndex = 1;
             // 
             // leeftijd_textbox
             // 
-            this.leeftijd_textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.leeftijd_textbox.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.leeftijd_textbox.ForeColor = System.Drawing.Color.Black;
             this.leeftijd_textbox.Location = new System.Drawing.Point(1158, 380);
             this.leeftijd_textbox.Name = "leeftijd_textbox";
-            this.leeftijd_textbox.Size = new System.Drawing.Size(372, 44);
+            this.leeftijd_textbox.Size = new System.Drawing.Size(372, 51);
             this.leeftijd_textbox.TabIndex = 3;
             // 
             // achternaam_textbox
             // 
             this.achternaam_textbox.BackColor = System.Drawing.Color.White;
-            this.achternaam_textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.achternaam_textbox.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.achternaam_textbox.ForeColor = System.Drawing.Color.Black;
             this.achternaam_textbox.Location = new System.Drawing.Point(1158, 277);
             this.achternaam_textbox.Name = "achternaam_textbox";
-            this.achternaam_textbox.Size = new System.Drawing.Size(372, 44);
+            this.achternaam_textbox.Size = new System.Drawing.Size(372, 51);
             this.achternaam_textbox.TabIndex = 2;
             // 
             // email_textbox
             // 
             this.email_textbox.BackColor = System.Drawing.Color.White;
-            this.email_textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.email_textbox.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email_textbox.ForeColor = System.Drawing.Color.Black;
             this.email_textbox.Location = new System.Drawing.Point(1158, 484);
             this.email_textbox.Name = "email_textbox";
-            this.email_textbox.Size = new System.Drawing.Size(372, 44);
+            this.email_textbox.Size = new System.Drawing.Size(372, 51);
             this.email_textbox.TabIndex = 4;
             // 
             // gsm_textbox
             // 
-            this.gsm_textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gsm_textbox.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gsm_textbox.ForeColor = System.Drawing.Color.Black;
             this.gsm_textbox.Location = new System.Drawing.Point(1158, 586);
             this.gsm_textbox.Name = "gsm_textbox";
-            this.gsm_textbox.Size = new System.Drawing.Size(372, 44);
+            this.gsm_textbox.Size = new System.Drawing.Size(372, 51);
             this.gsm_textbox.TabIndex = 5;
             // 
             // uitleg_game
@@ -132,7 +128,7 @@
             this.Registratie_text.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Registratie_text.Location = new System.Drawing.Point(858, -3);
             this.Registratie_text.Name = "Registratie_text";
-            this.Registratie_text.Size = new System.Drawing.Size(1017, 118);
+            this.Registratie_text.Size = new System.Drawing.Size(1045, 120);
             this.Registratie_text.TabIndex = 7;
             this.Registratie_text.Text = "Om te kunnen deelnemen aan onze TechoV-Quiz,\r\nmoet u zich registreren:\r\n";
             // 
@@ -142,7 +138,7 @@
             this.voornaam_label.BackColor = System.Drawing.Color.Transparent;
             this.voornaam_label.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.voornaam_label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.voornaam_label.Location = new System.Drawing.Point(759, 163);
+            this.voornaam_label.Location = new System.Drawing.Point(860, 164);
             this.voornaam_label.Name = "voornaam_label";
             this.voornaam_label.Size = new System.Drawing.Size(188, 45);
             this.voornaam_label.TabIndex = 8;
@@ -154,7 +150,7 @@
             this.achternaam_label.BackColor = System.Drawing.Color.Transparent;
             this.achternaam_label.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.achternaam_label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.achternaam_label.Location = new System.Drawing.Point(759, 263);
+            this.achternaam_label.Location = new System.Drawing.Point(860, 277);
             this.achternaam_label.Name = "achternaam_label";
             this.achternaam_label.Size = new System.Drawing.Size(218, 45);
             this.achternaam_label.TabIndex = 9;
@@ -166,7 +162,7 @@
             this.email_label.BackColor = System.Drawing.Color.Transparent;
             this.email_label.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email_label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.email_label.Location = new System.Drawing.Point(759, 473);
+            this.email_label.Location = new System.Drawing.Point(860, 484);
             this.email_label.Name = "email_label";
             this.email_label.Size = new System.Drawing.Size(234, 45);
             this.email_label.TabIndex = 10;
@@ -178,7 +174,7 @@
             this.leeftijd_label.BackColor = System.Drawing.Color.Transparent;
             this.leeftijd_label.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.leeftijd_label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.leeftijd_label.Location = new System.Drawing.Point(759, 379);
+            this.leeftijd_label.Location = new System.Drawing.Point(860, 380);
             this.leeftijd_label.Name = "leeftijd_label";
             this.leeftijd_label.Size = new System.Drawing.Size(147, 45);
             this.leeftijd_label.TabIndex = 11;
@@ -199,7 +195,7 @@
             this.gsm_label.BackColor = System.Drawing.Color.Transparent;
             this.gsm_label.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gsm_label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.gsm_label.Location = new System.Drawing.Point(759, 573);
+            this.gsm_label.Location = new System.Drawing.Point(860, 586);
             this.gsm_label.Name = "gsm_label";
             this.gsm_label.Size = new System.Drawing.Size(248, 45);
             this.gsm_label.TabIndex = 13;
@@ -214,7 +210,7 @@
             this.registratie_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registratie_btn.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registratie_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.registratie_btn.Location = new System.Drawing.Point(1223, 787);
+            this.registratie_btn.Location = new System.Drawing.Point(1334, 806);
             this.registratie_btn.Name = "registratie_btn";
             this.registratie_btn.Size = new System.Drawing.Size(240, 56);
             this.registratie_btn.TabIndex = 14;
@@ -228,7 +224,7 @@
             this.gsm_pakker_als_er_mooie_mamas_zijn.BackColor = System.Drawing.Color.Transparent;
             this.gsm_pakker_als_er_mooie_mamas_zijn.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gsm_pakker_als_er_mooie_mamas_zijn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.gsm_pakker_als_er_mooie_mamas_zijn.Location = new System.Drawing.Point(767, 673);
+            this.gsm_pakker_als_er_mooie_mamas_zijn.Location = new System.Drawing.Point(868, 692);
             this.gsm_pakker_als_er_mooie_mamas_zijn.Name = "gsm_pakker_als_er_mooie_mamas_zijn";
             this.gsm_pakker_als_er_mooie_mamas_zijn.Size = new System.Drawing.Size(631, 49);
             this.gsm_pakker_als_er_mooie_mamas_zijn.TabIndex = 15;
