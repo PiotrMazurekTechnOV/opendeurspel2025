@@ -27,26 +27,26 @@ async function connect() {
 app.post("/user/create", async (req, res) => {
   try {
       const { name, age, email, gsm_number, consent } = req.body;
+      console.log(req.body);
 
-      if (!name || !age || !gsm_number ||!consent) {
-          return res.status(400).json({ error: "All fields are required." });
-      }
-
-      let temp = Math.floor(Math.random());
-      console.log("temp =", temp);
-
-      const querys = "select opendeurspel2025.code FROM opendeurspel2025.users;"; 
+      let temp
+      let con = await connect();
+      const querys = "select code FROM users;"; 
+      
       const [codelist] = await con.execute(querys); // Voer de query uit
       let codeFound = false;
+      console.log(codelist);
       while(!codeFound){
         temp = Math.floor(Math.random());
         if(!codelist.includes(temp))
         {
           codeFound = true;
+          console.log("temp =", temp);
+
         }
       }''
       
-      const con = await connect(); 
+      con = await connect(); 
       const query = `INSERT INTO users (name, age, email, gsm_number, code, consent) VALUES 
       (?, ?, ?, ?, ?, ?)`;
       

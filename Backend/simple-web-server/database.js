@@ -6,7 +6,7 @@ async function testConnection() {
             host: "localhost",
             user: "root",
             password: "root",
-            database: "streetfighter",
+            database: "opendeurspel2025",
         });
         console.log("Connection successful!");
         await con.end();
